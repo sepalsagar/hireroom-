@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HireRoom</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface": "#fcf9f8",
+          "tertiary-fixed-dim": "#74d6db",
+          "surface-container-lowest": "#ffffff",
+          "secondary-container": "#e51344",
+          "on-tertiary-fixed": "#002021",
+          "on-error-container": "#93000a",
+          "outline-variant": "#e5bdbe",
+          "inverse-on-surface": "#f3f0ef",
+          "tertiary": "#00676b",
+          "background": "#fcf9f8",
+          "secondary-fixed-dim": "#ffb3b5",
+          "primary-fixed-dim": "#ffb2b6",
+          "on-primary-container": "#fffbff",
+          "surface-dim": "#dcd9d9",
+          "primary-container": "#e21e4a",
+          "on-surface": "#1b1c1c",
+          "on-tertiary-fixed-variant": "#004f52",
+          "tertiary-container": "#008287",
+          "surface-variant": "#e5e2e1",
+          "on-secondary-fixed": "#40000b",
+          "on-error": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "inverse-primary": "#ffb2b6",
+          "primary-fixed": "#ffdada",
+          "surface-container-low": "#f6f3f2",
+          "secondary": "#ba0033",
+          "surface-container": "#f0eded",
+          "on-surface-variant": "#5c3f41",
+          "secondary-fixed": "#ffdada",
+          "inverse-surface": "#303030",
+          "surface-container-high": "#eae7e7",
+          "surface-bright": "#fcf9f8",
+          "outline": "#906f70",
+          "on-tertiary-container": "#f3ffff",
+          "surface-container-highest": "#e5e2e1",
+          "on-secondary-fixed-variant": "#920026",
+          "tertiary-fixed": "#91f2f7",
+          "surface-tint": "#be0038",
+          "primary": "#ba0036",
+          "error-container": "#ffdad6",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#40000d",
+          "on-secondary-container": "#fffbff",
+          "on-primary-fixed-variant": "#920029",
+          "error": "#ba1a1a",
+          "on-primary": "#ffffff",
+          "on-background": "#1b1c1c"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem",
+          "gutter-mobile": "1rem",
+          "space-xl": "2.5rem",
+          "margin-mobile": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "margin": "2.5rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "label-lg": ["Inter"],
+          "headline-xl-mobile": ["Inter"],
+          "headline-lg-mobile": ["Inter"],
+          "body-lg": ["Inter"],
+          "headline-md": ["Inter"],
+          "headline-sm": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-lg": ["Inter"],
+          "label-md": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-xl": ["Inter"],
+          "body-sm": ["Inter"]
+        },
+        "fontSize": {
+          "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+          "headline-xl-mobile": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "label-md": ["14px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="job-openings" href="#"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(186,0,54,0.25)] group-hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-on-primary text-[22px]">meeting_room</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">HireRoom</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">Human Talent Suite</span></div></a><div class="hidden xl:flex items-center bg-surface-container-low rounded-full p-space-xs shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_14px_rgba(0,0,0,0.08)] transition-all"><div class="px-space-md py-space-xs flex flex-col justify-center cursor-pointer"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Roles</span><input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline w-44 p-0 focus:ring-0" placeholder="Search titles, skills..." type="text"/></div><div class="h-6 w-px bg-surface-container-high"></div><div class="px-space-md py-space-xs flex flex-col justify-center cursor-pointer"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Location</span><span class="font-body-sm text-body-sm text-on-surface-variant">Remote / Hybrid</span></div><button class="w-9 h-9 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">search</span></button></div></div><nav class="hidden lg:flex items-center p-space-xs bg-surface-container-low/70 rounded-full" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-full"><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="candidates" href="#">Candidates</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="interviews" href="#">Interviews</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="practice-arena" href="#">Practice Arena</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="job-openings" href="#">Job Openings</a></nav><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center bg-surface-container-high p-1 rounded-full"><button class="px-space-md py-1 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface shadow-sm" type="button">Recruiter</button><button class="px-space-md py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">Candidate</button></div><button aria-label="Notifications" class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Ambient Glow Gradient Container -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/4 w-[500px] h-[300px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute top-20 right-10 w-[350px] h-[250px] bg-tertiary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="w-full max-w-[1240px] mx-auto px-margin md:px-margin-desktop py-space-lg flex flex-col gap-space-xl">
+<!-- Greeting & Header Action Row -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg pt-space-sm">
+<div class="flex flex-col max-w-2xl">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant font-semibold">
+              TODAY'S CONVERSATIONS &amp; TEAM
+            </span>
+</div>
+<h1 class="font-display-xl text-display-xl text-ink tracking-tight font-bold">
+            Good morning, Alex. You have 3 interviews lined up today.
+          </h1>
+<p class="font-body-md text-body-md text-muted mt-space-xs leading-relaxed">
+            Everything is set up so you and your team can focus on getting to know great people.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="h-12 px-space-md rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-title-sm text-title-sm flex items-center gap-space-xs transition-colors shadow-sm" id="quick-prep-btn">
+<span class="material-symbols-outlined text-[20px] text-muted">tune</span>
+<span>Room Settings</span>
+</button>
+<button class="h-12 px-space-lg rounded-xl bg-primary hover:bg-primary-active text-on-dark font-title-sm text-title-sm flex items-center gap-space-xs transition-all shadow-[0_8px_20px_rgba(255,56,92,0.35)] active:scale-[0.98]" id="schedule-modal-trigger">
+<span class="material-symbols-outlined text-[20px] text-on-dark font-bold">add</span>
+<span>+ Schedule an Interview</span>
+</button>
+</div>
+</section>
+<!-- Key Metrics Row (No borders, subtle tonal elevations) -->
+<section class="grid grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="bg-surface-card hover:bg-surface-soft p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm group">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-muted">Upcoming Today</span>
+<span class="w-8 h-8 rounded-lg bg-surface-soft group-hover:bg-primary/20 flex items-center justify-center text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl font-bold text-ink">3</span>
+<span class="font-body-sm text-body-sm text-muted">conversations</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>First starts in 45m</span>
+</div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-card hover:bg-surface-soft p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm group">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-muted">In Active Pipeline</span>
+<span class="w-8 h-8 rounded-lg bg-surface-soft group-hover:bg-tertiary-container/30 flex items-center justify-center text-tertiary transition-colors">
+<span class="material-symbols-outlined text-[18px]">groups</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl font-bold text-ink">42</span>
+<span class="font-body-sm text-body-sm text-muted">candidates</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+6 new this week</span>
+</div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-card hover:bg-surface-soft p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm group">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-muted">Review Ready</span>
+<span class="w-8 h-8 rounded-lg bg-surface-soft group-hover:bg-surface-strong flex items-center justify-center text-ink transition-colors">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl font-bold text-ink">14</span>
+<span class="font-body-sm text-body-sm text-muted">panel notes</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">assignment_turned_in</span>
+<span>4 need Alex’s decision</span>
+</div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-card hover:bg-surface-soft p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm group">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-muted">Offer Acceptance</span>
+<span class="w-8 h-8 rounded-lg bg-surface-soft group-hover:bg-primary/20 flex items-center justify-center text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl font-bold text-ink">92%</span>
+<span class="font-body-sm text-body-sm text-muted">past 90 days</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>5% above tech benchmark</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Schedule & Workspace Split -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left: Interviews Today Interactive List (8 Columns) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">video_chat</span>
+<h2 class="font-headline-lg text-headline-lg text-ink font-bold">Interviews Today</h2>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-strong font-label-sm text-label-sm text-ink ml-space-xs">3 active</span>
+</div>
+<span class="font-body-sm text-body-sm text-muted">Times synced to PST (San Francisco)</span>
+</div>
+<!-- Schedule Item 1: Urgent / Starting Soon -->
+<div class="bg-surface-card p-space-lg rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-space-md transition-all duration-300 shadow-sm hover:shadow-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start md:items-center gap-space-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-2xl object-cover shadow-md" data-alt="Warm studio headshot portrait of Marcus Sterling, senior front-end engineer candidate with friendly glasses, warm lighting on a dark slate background, warm charcoal and deep crimson subtle tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNDH-fsuJlOD0MGHx0-beXpGbkquEA5wA0N-u_IHVBE9pdG1Y3D619JG63clB8M9Rq2fAeBku9nkDxS5HATR4EskutC-L6zwF6df1yKynsjDPlLgoqJrckJr-YegafC6YPhKhTHeKo2lnU9HGJL-BhASuLgEmlqjUPtIc0y9vWzZs-oJZAC5qll3goU7FMU45BKo7PKU-O08k2su5OtFGDxoMeVM4mAqRHkRhWGgzYoAd1-B_KzcbH6A"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-tertiary ring-2 ring-surface-card" title="Online &amp; ready in lobby"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-title-md text-title-md text-ink font-bold">Marcus Sterling</span>
+<span class="px-space-xs py-0.5 rounded-md bg-surface-strong text-primary font-label-sm text-label-sm">Senior Frontend Architect</span>
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-muted">Round 3: System Architecture</span>
+</div>
+<div class="flex items-center gap-space-md text-muted font-body-sm text-body-sm mt-space-xs flex-wrap">
+<span class="flex items-center gap-1 text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                    in 45 mins (10:30 AM)
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">co_present</span>
+                    With: Maya Lin &amp; Dan Vogel
+                  </span>
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+                    Lobby tested
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs md:pt-0 self-end md:self-center">
+<button class="h-10 px-space-md rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-label-md text-label-md flex items-center gap-1 transition-colors" onclick="toggleNotes('marcus-notes')">
+<span class="material-symbols-outlined text-[18px]">sticky_note_2</span>
+<span>View Notes</span>
+</button>
+<a class="h-10 px-space-lg rounded-xl bg-primary hover:bg-primary-active text-on-dark font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-[0_4px_12px_rgba(255,56,92,0.3)]" href="#">
+<span class="material-symbols-outlined text-[18px]">meeting_room</span>
+<span>Join Room</span>
+</a>
+</div>
+</div>
+<!-- Collapsible Note Preview Marcus -->
+<div class="hidden bg-surface-container p-space-md rounded-xl -mt-space-sm text-body-sm text-body flex flex-col gap-space-xs transition-all" id="marcus-notes">
+<div class="flex items-center justify-between text-muted font-label-sm text-label-sm">
+<span>Interviewer Rubric &amp; Focus Area:</span>
+<span class="text-primary font-medium">Core focus: Web performance &amp; SSR rendering</span>
+</div>
+<p class="text-body-sm text-on-surface leading-relaxed">
+              “Marcus excelled at the take-home design system assessment. Dan wants to drill specifically on state hydration bottlenecks and how he coordinates with product managers during edge-case bugs.”
+            </p>
+</div>
+<!-- Schedule Item 2: Allison Brody -->
+<div class="bg-surface-card p-space-lg rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-space-md transition-all duration-300 shadow-sm hover:shadow-md">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-2xl object-cover shadow-md" data-alt="Portrait of Allison Brody, cheerful senior product designer smiling softly, captured in warm ambient desk lighting with soft charcoal background, warm natural skin tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYlBIp6mNlzv4hX61KZyVeA9z63J9UHcPQpD1TWhMugL6IOnkWGRlOvH0kRSOoJ1N_ys5_R6dMQvEztiH8xCTeA_LRXEUvbVmx8w2K1ro8ei7lF4j0s1-vQ2U_UFBj3lk5fPVeYeTe2_n-v_KEjBi2wpC_w1zdRAJw5s6pQct5dQ6d_CPklK2JdyWxTGp91p9w8duvRRyD1X4hrWPZ2x0XXuSJ3ZJEIhSJIeImUvx66QVSrYYK3eHnAQ"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-muted-soft ring-2 ring-surface-card" title="Offline - Scheduled"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-title-md text-title-md text-ink font-bold">Allison Brody</span>
+<span class="px-space-xs py-0.5 rounded-md bg-surface-strong text-ink font-label-sm text-label-sm">Principal Staff Designer</span>
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-muted">Portfolio Walkthrough</span>
+</div>
+<div class="flex items-center gap-space-md text-muted font-body-sm text-body-sm mt-space-xs flex-wrap">
+<span class="flex items-center gap-1 text-ink">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                    in 2h 15m (12:00 PM)
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">co_present</span>
+                    With: Alex Miller &amp; Sarah Kim
+                  </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">attach_file</span>
+                    Figma slide loaded
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs md:pt-0 self-end md:self-center">
+<button class="h-10 px-space-md rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-label-md text-label-md flex items-center gap-1 transition-colors" onclick="toggleNotes('allison-notes')">
+<span class="material-symbols-outlined text-[18px]">sticky_note_2</span>
+<span>View Notes</span>
+</button>
+<button class="h-10 px-space-lg rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">door_front</span>
+<span>Prep Room</span>
+</button>
+</div>
+</div>
+<!-- Collapsible Note Preview Allison -->
+<div class="hidden bg-surface-container p-space-md rounded-xl -mt-space-sm text-body-sm text-body flex flex-col gap-space-xs transition-all" id="allison-notes">
+<p class="text-body-sm text-on-surface leading-relaxed">
+              “Allison requested 5 minutes at the beginning to showcase mobile accessibility patterns she championed at her previous startup. Let’s leave ample room for questions at the end.”
+            </p>
+</div>
+<!-- Schedule Item 3: Kenji Takahashi -->
+<div class="bg-surface-card p-space-lg rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-space-md transition-all duration-300 shadow-sm hover:shadow-md">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-2xl object-cover shadow-md" data-alt="Portrait of Kenji Takahashi, thoughtfully smiling machine learning engineer with modern warm casual wear, warm directional lighting on a subtle textured dark charcoal interior background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmf_N8a_6K05vkqmw-I6iImaiFMOnFeHGPqr3ez_28a9R3ZeEmHiISae1O7Z9KxwiBrf231pAMROJwMaMi2vVUB5o32ypl0T-z2Tf_ZIRsgN57tqF1oDKt4vau-0jVxpuVA8A_jdrxH8_KxJ-gPtkir6yZ7jXC4kPZcq4yjr5fJq43VRuxz9jEgaCmFRfppq96qnzkVyXwq_SowEckpjLHHSJzsz2oGHzW_lggX7tMhdkpIJPtvXHybg"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-muted-soft ring-2 ring-surface-card"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-title-md text-title-md text-ink font-bold">Kenji Takahashi</span>
+<span class="px-space-xs py-0.5 rounded-md bg-surface-strong text-ink font-label-sm text-label-sm">Staff Data Platform Engineer</span>
+<span class="px-space-xs py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-muted">Final Debrief &amp; Team Fit</span>
+</div>
+<div class="flex items-center gap-space-md text-muted font-body-sm text-body-sm mt-space-xs flex-wrap">
+<span class="flex items-center gap-1 text-ink">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                    Today at 3:30 PM (45m)
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">co_present</span>
+                    With: VP Engineering &amp; Talent Lead
+                  </span>
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">star</span>
+                    High enthusiasm score
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs md:pt-0 self-end md:self-center">
+<button class="h-10 px-space-md rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-label-md text-label-md flex items-center gap-1 transition-colors" onclick="toggleNotes('kenji-notes')">
+<span class="material-symbols-outlined text-[18px]">sticky_note_2</span>
+<span>View Notes</span>
+</button>
+<button class="h-10 px-space-lg rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>Send Reminder</span>
+</button>
+</div>
+</div>
+<!-- Collapsible Note Preview Kenji -->
+<div class="hidden bg-surface-container p-space-md rounded-xl -mt-space-sm text-body-sm text-body flex flex-col gap-space-xs transition-all" id="kenji-notes">
+<p class="text-body-sm text-on-surface leading-relaxed">
+              “Previous panel scored 4.9 / 5 across data streaming foundations. Today’s conversation is mostly about alignment with our Q3 real-time hiring metrics roadmap.”
+            </p>
+</div>
+</div>
+<!-- Right: Team Atmosphere & Pipeline Pulse Panel (4 Columns) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<h2 class="font-headline-lg text-headline-lg text-ink font-bold">Panel Rhythm</h2>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+              All systems smooth
+            </span>
+</div>
+<!-- Room Environment Checklist Card -->
+<div class="bg-surface-card p-space-lg rounded-2xl flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-ink font-semibold">Warm Interview Checklist</span>
+<span class="font-body-sm text-body-sm text-muted">Thoughtful practices for your panel</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-soft cursor-pointer transition-colors">
+<input checked="" class="w-5 h-5 rounded accent-primary bg-surface border-none cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-ink">Give candidates 3 mins to settle and breathe</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-soft cursor-pointer transition-colors">
+<input checked="" class="w-5 h-5 rounded accent-primary bg-surface border-none cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-ink">Share agenda openly in chat beforehand</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-soft cursor-pointer transition-colors">
+<input class="w-5 h-5 rounded accent-primary bg-surface border-none cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-body">Reserve 10 mins purely for their questions</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-soft cursor-pointer transition-colors">
+<input class="w-5 h-5 rounded accent-primary bg-surface border-none cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-body">Post-interview quick async reflection check</span>
+</label>
+</div>
+<!-- Inline SVG Sparkline / Pipeline Health -->
+<div class="bg-surface-soft p-space-md rounded-xl flex flex-col gap-space-xs mt-space-xs">
+<div class="flex justify-between items-center text-muted font-label-sm text-label-sm">
+<span>Candidate Sentiment Pace</span>
+<span class="text-tertiary font-bold">+18% vs last month</span>
+</div>
+<!-- Mini SVG graph showing ascending sentiment score -->
+<div class="w-full h-12 flex items-end">
+<svg class="w-full h-10 text-primary stroke-current fill-none" viewbox="0 0 240 40">
+<path d="M0 32 Q 30 28, 60 22 T 120 18 T 180 8 T 240 4" stroke-linecap="round" stroke-width="2.5"></path>
+<circle class="fill-primary text-primary" cx="240" cy="4" r="3.5"></circle>
+</svg>
+</div>
+<span class="font-body-sm text-body-sm text-muted">98% of candidates rated their video room experience as “warm &amp; respectful”.</span>
+</div>
+</div>
+<!-- Active Panel Members Working Card -->
+<div class="bg-surface-card p-space-lg rounded-2xl flex flex-col gap-space-sm shadow-sm">
+<span class="font-title-sm text-title-sm text-ink font-semibold">Active Interviewers Today</span>
+<div class="flex items-center justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-strong flex items-center justify-center font-label-sm text-label-sm text-ink font-bold">ML</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-ink font-medium">Maya Lin</span>
+<span class="font-label-sm text-label-sm text-muted">Engineering Lead</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">Ready in Room #2</span>
+</div>
+<div class="flex items-center justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-strong flex items-center justify-center font-label-sm text-label-sm text-ink font-bold">DV</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-ink font-medium">Dan Vogel</span>
+<span class="font-label-sm text-label-sm text-muted">Senior Staff Architect</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-muted">Joining 10:25 AM</span>
+</div>
+<div class="flex items-center justify-between py-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-strong flex items-center justify-center font-label-sm text-label-sm text-ink font-bold">SK</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-ink font-medium">Sarah Kim</span>
+<span class="font-label-sm text-label-sm text-muted">Design Director</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-muted">Reviewing portfolio</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Candidate Spotlight (Warm Photo-First Bento Showcase) -->
+<section class="flex flex-col gap-space-md pt-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-primary text-[20px]">stars</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-muted font-semibold">TALENT HIGHLIGHTS</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-ink font-bold">Candidate Spotlight</h2>
+<p class="font-body-md text-body-md text-muted mt-0.5">High-affinity candidates with standout impressions from recent panel debriefs.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-10 h-10 rounded-xl bg-surface-soft hover:bg-surface-strong text-ink flex items-center justify-center transition-colors" id="carousel-prev">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-surface-soft hover:bg-surface-strong text-ink flex items-center justify-center transition-colors" id="carousel-next">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md" id="spotlight-carousel">
+<!-- Candidate 1: Elena Rostova -->
+<div class="bg-surface-card rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:translate-y-[-4px] shadow-sm hover:shadow-xl group">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Warm natural portrait of Elena Rostova, distributed systems engineer with relaxed smile in a softly lit plant-filled studio apartment, dark charcoal background tones and soft coral accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvZd-Mdxn-dLu3fC8FCGatrsNKGzbr8c-pVlofwV-R2N3aTz2L75Oiu2i8jv-NgHZREyOoVv82qah32PdTi964HJqTzKT1XYmUp_FjpiulB3ZKb3e5Bhbwxk1XyssyUvMHTNENrzOsQ2e1zVAtCSdvW2vW2rOCBLQ8etTVM_axBHIucRVXHs8bk_n42dozUQdnAt-KrKVy4NddSpAwzScH3jHpjxG8DFNF4dt5BGy986aEYjmar5-1Og"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent"></div>
+<!-- Match Badge -->
+<div class="absolute top-space-md left-space-md px-space-sm py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">favorite</span>
+<span class="font-label-sm text-label-sm text-ink font-bold">96% Match</span>
+</div>
+<!-- Location Tag -->
+<div class="absolute top-space-md right-space-md px-space-sm py-1 rounded-full bg-surface-card/75 backdrop-blur-md text-muted font-label-sm text-label-sm">
+                Remote (Berlin)
+              </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline-lg text-headline-lg text-ink font-bold">Elena Rostova</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Ready for Offer</span>
+</div>
+<span class="font-body-sm text-body-sm text-muted">Distributed Systems &amp; Kafka Infrastructure</span>
+<!-- Verbatim Panel Chat Quote -->
+<div class="p-space-md rounded-xl bg-surface-soft mt-space-xs text-body font-body-sm text-body-sm italic leading-relaxed relative">
+<span class="text-primary font-bold not-italic font-title-sm text-title-sm">“</span>
+                  She walked through our multi-region replication issue and identified the exact race condition in under 10 minutes. Super humble collaborator.
+                  <span class="text-primary font-bold not-italic font-title-sm text-title-sm">”</span>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap gap-space-xs mt-space-xs">
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">Go / Rust</span>
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">Distributed Consensus</span>
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">Kind &amp; Clear</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full h-11 rounded-xl bg-surface-soft hover:bg-primary hover:text-on-dark text-ink font-title-sm text-title-sm transition-all flex items-center justify-center gap-1">
+<span>Review Profile &amp; Feedback</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Candidate 2: David Chen -->
+<div class="bg-surface-card rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:translate-y-[-4px] shadow-sm hover:shadow-xl group">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of David Chen, product management candidate smiling confidently with warm studio backlight, dark charcoal minimalist background, natural warmth and modern hospitality aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLE3nm66s6GYGoEEKODHJ-Wvn1JUviWDbtuz8xDZl-RWo2YZQuh69-YSokZM8CBVg607FaD3bLl8ecRfzU04E80sJ-WqWo1I84KltHGPYnI1o7D92uNX72h20iqB2H6wCLrvvxIWMXIj4fV8aW6H7qSA4aKBqGGLCx_ZLtdrJaG4FChiig6xxrfdGk1GFEnL9-csd-PXR1AidCllMXj31vZxv6pJqVHxR6_Y7lV1X8OTpgYUpZ3eX-cw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent"></div>
+<!-- Match Badge -->
+<div class="absolute top-space-md left-space-md px-space-sm py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">favorite</span>
+<span class="font-label-sm text-label-sm text-ink font-bold">88% Match</span>
+</div>
+<!-- Location Tag -->
+<div class="absolute top-space-md right-space-md px-space-sm py-1 rounded-full bg-surface-card/75 backdrop-blur-md text-muted font-label-sm text-label-sm">
+                Hybrid (Seattle)
+              </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline-lg text-headline-lg text-ink font-bold">David Chen</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Stage: Lead Debrief</span>
+</div>
+<span class="font-body-sm text-body-sm text-muted">Group Product Manager (Candidate Experience)</span>
+<!-- Verbatim Panel Chat Quote -->
+<div class="p-space-md rounded-xl bg-surface-soft mt-space-xs text-body font-body-sm text-body-sm italic leading-relaxed relative">
+<span class="text-primary font-bold not-italic font-title-sm text-title-sm">“</span>
+                  Unusually attentive to candidate dignity during rejection flows. His roadmap philosophy balances velocity with real empathy for users.
+                  <span class="text-primary font-bold not-italic font-title-sm text-title-sm">”</span>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap gap-space-xs mt-space-xs">
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">Product Discovery</span>
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">PLG Growth</span>
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">Human-Centered</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full h-11 rounded-xl bg-surface-soft hover:bg-primary hover:text-on-dark text-ink font-title-sm text-title-sm transition-all flex items-center justify-center gap-1">
+<span>Review Profile &amp; Feedback</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Candidate 3: Priya Patel -->
+<div class="bg-surface-card rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:translate-y-[-4px] shadow-sm hover:shadow-xl group">
+<div class="relative w-full h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Priya Patel, thoughtful senior engineering director with warm expressive eyes, modern dark textured background with subtle deep coral edge lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhU5aWFzOSDlZHU2IRgJoI61oLKnXmSi3KDM2XuM7yaWlUEr1Hb5eNKqeQeJy9jbF_Lipgh1sNUHWZCIzhbWx2Qp0z0Q5hgXJmnwOcAdt0lYKpEz3tg-9FYYPbZBof9kzv6-AjCYcdw9GH31V4mxLOi8eHq4GVftyncEb5O4K93lURCYWtMJG68pBZU_K2_UcQiQgwDE2iPCtsgN-d0Z6NnJXC_sk7cXV0-kj6Ruq_HakvjH2aX14M9w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent"></div>
+<!-- Match Badge -->
+<div class="absolute top-space-md left-space-md px-space-sm py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">favorite</span>
+<span class="font-label-sm text-label-sm text-ink font-bold">97% Match</span>
+</div>
+<!-- Location Tag -->
+<div class="absolute top-space-md right-space-md px-space-sm py-1 rounded-full bg-surface-card/75 backdrop-blur-md text-muted font-label-sm text-label-sm">
+                Remote (Toronto)
+              </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline-lg text-headline-lg text-ink font-bold">Priya Patel</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Offer Extended</span>
+</div>
+<span class="font-body-sm text-body-sm text-muted">Director of Infrastructure Engineering</span>
+<!-- Verbatim Panel Chat Quote -->
+<div class="p-space-md rounded-xl bg-surface-soft mt-space-xs text-body font-body-sm text-body-sm italic leading-relaxed relative">
+<span class="text-primary font-bold not-italic font-title-sm text-title-sm">“</span>
+                  One of the most inspiring engineering leaders we have spoken with this year. Her philosophy on mentorship completely won the team over.
+                  <span class="text-primary font-bold not-italic font-title-sm text-title-sm">”</span>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap gap-space-xs mt-space-xs">
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">Org Scaling</span>
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">Cloud Cost Optimization</span>
+<span class="px-space-xs py-1 rounded-lg bg-surface-container text-body font-label-sm text-label-sm">Retention +94%</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full h-11 rounded-xl bg-surface-soft hover:bg-primary hover:text-on-dark text-ink font-title-sm text-title-sm transition-all flex items-center justify-center gap-1">
+<span>Review Profile &amp; Feedback</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Thoughtful Micro-Interaction Card: Quick Feedback Ribbon -->
+<section class="bg-surface-card p-space-lg rounded-2xl flex flex-col md:flex-row items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-2xl bg-surface-soft flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">coffee</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-ink font-bold">Have 5 minutes between calls?</span>
+<span class="font-body-md text-body-md text-muted">Submit your thoughts on yesterday’s conversation with Mateo Rivera while it’s still fresh in mind.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<button class="h-11 px-space-md rounded-xl bg-surface-soft hover:bg-surface-strong text-muted hover:text-ink font-title-sm text-title-sm transition-colors">
+            Remind Me at 4 PM
+          </button>
+<button class="h-11 px-space-lg rounded-xl bg-primary hover:bg-primary-active text-on-dark font-title-sm text-title-sm transition-all shadow-[0_4px_12px_rgba(255,56,92,0.3)]">
+            Open Scorecard
+          </button>
+</div>
+</section>
+<!-- Brand Footer Tagline -->
+<footer class="pt-space-lg pb-space-xl flex flex-col items-center justify-center text-center gap-space-xs">
+<div class="flex items-center gap-space-xs text-muted">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md tracking-wide text-ink font-medium">HireRoom</span>
+<span>—</span>
+<span class="font-body-md text-body-md text-muted">Thoughtful hiring conversations made simple.</span>
+</div>
+<span class="font-label-sm text-label-sm text-muted">Designed for hospitality, presence, and genuine human connection.</span>
+</footer>
+</div>
+</div>
+<!-- Interactive Modal / Slide-over: Schedule Interview (Hidden by default, triggered by JS) -->
+<div class="fixed inset-0 z-50 bg-canvas/80 backdrop-blur-sm flex items-center justify-center p-space-md hidden opacity-0 transition-opacity duration-200" id="schedule-modal">
+<div class="bg-surface-card max-w-lg w-full rounded-2xl p-space-lg flex flex-col gap-space-md shadow-2xl relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+</div>
+<span class="font-title-md text-title-md text-ink font-bold">Schedule an Interview</span>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-soft flex items-center justify-center text-muted hover:text-ink transition-colors" id="close-modal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-muted">
+        Select a candidate from your pipeline to automatically align team calendars and generate a warm, branded HireRoom link.
+      </p>
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<label class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-ink font-medium">Candidate Name or Email</span>
+<input class="h-11 px-space-md rounded-xl bg-surface-soft text-ink font-body-sm text-body-sm placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-primary" placeholder="e.g. Maya, David Chen, or elena@domain.com" type="text"/>
+</label>
+<label class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-ink font-medium">Interview Round</span>
+<select class="h-11 px-space-md rounded-xl bg-surface-soft text-ink font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary">
+<option>Round 1: First Warm Introduction (30m)</option>
+<option>Round 2: Technical Deep Dive &amp; Pairing (60m)</option>
+<option>Round 3: Values &amp; Mutual Fit Discussion (45m)</option>
+<option>Round 4: Offer Alignment &amp; Questions (30m)</option>
+</select>
+</label>
+<div class="grid grid-cols-2 gap-space-sm">
+<label class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-ink font-medium">Date</span>
+<input class="h-11 px-space-md rounded-xl bg-surface-soft text-ink font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" type="date" value="2025-05-14"/>
+</label>
+<label class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-ink font-medium">Time (PST)</span>
+<input class="h-11 px-space-md rounded-xl bg-surface-soft text-ink font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" type="time" value="11:00"/>
+</label>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs mt-space-xs">
+<button class="h-11 px-space-md rounded-xl hover:bg-surface-soft text-muted hover:text-ink font-title-sm text-title-sm transition-colors" id="cancel-modal">
+          Cancel
+        </button>
+<button class="h-11 px-space-lg rounded-xl bg-primary hover:bg-primary-active text-on-dark font-title-sm text-title-sm transition-all shadow-[0_4px_12px_rgba(255,56,92,0.3)]" id="confirm-schedule">
+          Create Room &amp; Invite
+        </button>
+</div>
+</div>
+</div>
+<!-- Inline Script for UI Micro-Interactions -->
+<script>
+    function toggleNotes(noteId) {
+      const el = document.getElementById(noteId);
+      if (el) {
+        if (el.classList.contains('hidden')) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      }
+    }
+
+    const modal = document.getElementById('schedule-modal');
+    const trigger = document.getElementById('schedule-modal-trigger');
+    const closeBtn = document.getElementById('close-modal');
+    const cancelBtn = document.getElementById('cancel-modal');
+    const confirmBtn = document.getElementById('confirm-schedule');
+
+    function openModal() {
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10);
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 200);
+    }
+
+    if (trigger) trigger.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        confirmBtn.innerText = 'Creating room...';
+        setTimeout(() => {
+          confirmBtn.innerText = 'Invite Sent!';
+          setTimeout(() => {
+            closeModal();
+            confirmBtn.innerText = 'Create Room & Invite';
+          }, 800);
+        }, 600);
+      });
+    }
+
+    // Carousel buttons subtle scroll feedback
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const carousel = document.getElementById('spotlight-carousel');
+
+    if (prevBtn && nextBtn && carousel) {
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: 320, behavior: 'smooth' });
+      });
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -320, behavior: 'smooth' });
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="grid grid-cols-2 md:grid-cols-4 gap-space-lg mb-space-lg"><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Discovery</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="job-openings" href="#">Featured Openings</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="candidates" href="#">Active Talent Pool</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="practice-arena" href="#">Mock Assessments</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Evaluation</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="interviews" href="#">Live Rooms</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Scorecards &amp; Rubrics</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Async Video Prep</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Community</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Interview Coaching</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Salary Benchmark</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Hiring Guides</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">HireRoom</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-primary">favorite</span><span class="font-body-sm text-body-sm">Built for warm, trusted human hiring.</span></div><p class="font-body-sm text-body-sm text-outline mt-space-xs">Accessible interview rooms and transparent hiring pathways for modern teams.</p></div></div><div class="pt-space-md border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2025 HireRoom Inc. All rights reserved.</span><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" href="#">Privacy</a><a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" href="#">Terms</a><a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" href="#">Trust &amp; Safety</a></div></div></div></footer></body></html>

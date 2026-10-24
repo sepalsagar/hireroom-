@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HireRoom Candidate Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#00676b", "on-secondary-fixed": "#40000b", "primary-fixed": "#ffdada", "on-secondary-fixed-variant": "#920026", "on-primary-fixed-variant": "#920029", "tertiary-fixed": "#91f2f7", "surface-tint": "#be0038", "surface": "#fcf9f8", "on-surface": "#1b1c1c", "inverse-primary": "#ffb2b6", "surface-container-low": "#f6f3f2", "inverse-on-surface": "#f3f0ef", "primary": "#ba0036", "primary-fixed-dim": "#ffb2b6", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "outline": "#906f70", "tertiary-fixed-dim": "#74d6db", "inverse-surface": "#303030", "error": "#ba1a1a", "surface-dim": "#dcd9d9", "secondary": "#ba0033", "on-error": "#ffffff", "tertiary-container": "#008287", "on-background": "#1b1c1c", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb3b5", "secondary-container": "#e51344", "outline-variant": "#e5bdbe", "on-primary-fixed": "#40000d", "on-tertiary-fixed": "#002021", "surface-container": "#f0eded", "on-secondary": "#ffffff", "surface-bright": "#fcf9f8", "on-secondary-container": "#fffbff", "surface-container-high": "#eae7e7", "surface-variant": "#e5e2e1", "on-tertiary-fixed-variant": "#004f52", "on-tertiary": "#ffffff", "on-tertiary-container": "#f3ffff", "on-primary-container": "#fffbff", "background": "#fcf9f8", "on-surface-variant": "#5c3f41", "surface-container-highest": "#e5e2e1", "on-primary": "#ffffff", "primary-container": "#e21e4a", "secondary-fixed": "#ffdada" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-sm": "0.5rem", "margin": "2.5rem", "margin-mobile": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "gutter": "1.5rem" }, "fontFamily": { "headline-lg-mobile": ["Inter"], "headline-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "headline-xl": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["16px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }] } } } };</script></head><body class="min-h-full bg-background font-body-md text-on-surface flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1128px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-xs focus:outline-none" data-path="dashboard" href="#"><span class="w-3 h-3 rounded-full bg-primary inline-block"></span><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">HireRoom</span></a><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-full"><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#">Dashboard</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-interviews" href="#">My Interviews</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="feedback-passport" href="#">Feedback &amp; Passport</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="offer-welcome" href="#">Offer &amp; Welcome</a></nav></div><div class="flex items-center gap-space-md"><div class="relative hidden sm:block"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px] pointer-events-none">search</span><input class="w-56 md:w-64 pl-10 pr-space-md py-space-sm bg-surface-container-low rounded-full font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-outline transition-all" placeholder="Search my applications, notes..." type="search"/></div><button class="relative p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors focus:outline-none" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface"></span></div><div class="hidden xl:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface leading-tight">Elena Rostova</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Candidate</span></div></div></div></div></header><main class="w-full pt-20 bg-background flex-1"><div class="max-w-[1128px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Celebration Banner & Welcome Hero -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low shadow-sm">
+<!-- Soft Decorative Gradient Bloom -->
+<div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-tertiary/10 blur-3xl pointer-events-none"></div>
+<div class="relative p-space-md sm:p-space-lg md:p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex flex-wrap items-center gap-space-sm mb-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              Official Offer Extended
+            </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+              Valid until Nov 18, 2024 (7 days remaining)
+            </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+            Congratulations, Elena! We'd love to welcome you to CloudScale.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant pt-space-xs">
+            Staff Distributed Systems Engineer (L6) • Distributed Platforms Team
+          </p>
+</div>
+<!-- Quick Host Avatar Capsule -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm self-start">
+<img class="w-12 h-12 rounded-full object-cover ring-2 ring-primary-fixed" data-alt="Portrait of Jordan Lee, Candidate Concierge, smiling warmly in a modern minimalist office with natural morning light and soft architectural plants in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyK0FDZsuz6IZggv52p0ys9mHpQfWgvEPggnvNkfCrTHiaRcWmzIfVeltSFsFne3U-cmNgrMqDcjeilbEvgiddRDaKfPFN6AaiG7pB7BP1T3yaPmBgdZVbkUiF7QWN1M00EiELi3-U43qeny7odCkZWPCP0xoRWd2W-DyG8savylJF7kkXmrhEIAkKugUfv57RGa_xuFEn4mWguSM21n2bL6AW-ay3bKrgifEhYx6L0UTtQc2iKiQQ1Q"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Jordan Lee</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Your Hiring Concierge</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary inline-block"></span> Online • Ready to assist
+            </span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm" href="#decision-hub">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">draw</span>
+          Accept &amp; Sign Offer
+        </a>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="document.getElementById('concierge-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+          Schedule Call with Hiring Host
+        </button>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-sm" onclick="alert('Downloading CloudScale_Offer_Elena_Rostova_L6.pdf (Official Signed Copy)')" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+          Download Official Packet (PDF)
+        </button>
+</div>
+</div>
+</div>
+<!-- Bento Grid: Main Body Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mt-space-xl items-start">
+<!-- LEFT COLUMN: Compensation & Perks Breakdown (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- Interactive Compensation Breakdown Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="font-label-sm text-label-sm text-tertiary font-semibold uppercase tracking-wider">Total Value Proposition</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Compensation Blueprint</h2>
+</div>
+<!-- View Toggle Segment -->
+<div class="inline-flex items-center p-1 bg-surface-container-low rounded-full self-start">
+<button class="px-4 py-1.5 rounded-full font-label-sm text-label-sm bg-surface text-on-surface shadow-sm transition-all" id="toggle-y1" onclick="switchCompView('y1')">Year 1 Target</button>
+<button class="px-4 py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="toggle-4y" onclick="switchCompView('4y')">4-Year Total</button>
+</div>
+</div>
+<!-- Big Highlight Stat -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="total-caption">Total Target Compensation (Year 1)</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight" id="comp-total">$375,000</span>
+<span class="font-body-md text-body-md text-tertiary font-medium" id="comp-subtext">USD / first 12 months</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> Level 6 Tier Match
+            </span>
+</div>
+</div>
+<!-- Visual Proportion Stack Bar -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Allocation Composition</span>
+<span id="allocation-split">Base (64%) • RSUs (25%) • Bonus (11%)</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container flex overflow-hidden">
+<div class="h-full bg-primary transition-all duration-500" id="bar-base" style="width: 64%;"></div>
+<div class="h-full bg-tertiary transition-all duration-500" id="bar-rsu" style="width: 25%;"></div>
+<div class="h-full bg-tertiary-fixed-dim transition-all duration-500" id="bar-bonus" style="width: 11%;"></div>
+</div>
+</div>
+<!-- Detail Breakdown Rows -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Base -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+              Annual Base Salary
+            </div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="val-base">$240,000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Semi-monthly direct deposit</span>
+</div>
+<!-- Equity -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+              Equity Grant (RSUs)
+            </div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="val-equity">$95,000 / yr</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="sub-equity">$380,000 total (4-yr schedule)</span>
+</div>
+<!-- Sign-on -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+              Sign-on Hospitality Bonus
+            </div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="val-bonus">$40,000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Paid on first payroll cycle</span>
+</div>
+</div>
+<!-- 4-Year Equity Vesting Pathway Visual -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">4-Year Equity Vesting Milestone Pathway</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">25% cliff at 12 mo • quarterly thereafter</span>
+</div>
+<div class="grid grid-cols-4 gap-2 pt-2">
+<div class="flex flex-col gap-1 text-center bg-surface p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Year 1</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">$95,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">25% (Cliff)</span>
+</div>
+<div class="flex flex-col gap-1 text-center bg-surface p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Year 2</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">$95,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">25% (Quarterly)</span>
+</div>
+<div class="flex flex-col gap-1 text-center bg-surface p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Year 3</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">$95,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">25% (Quarterly)</span>
+</div>
+<div class="flex flex-col gap-1 text-center bg-surface p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Year 4</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">$95,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">25% (Fully Vested)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hospitality Perks & Holistic Well-being -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col">
+<div class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Holistic Support</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Care &amp; Hospitality Package</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive coverage designed to give you peace of mind and creative space.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex gap-space-md p-space-md rounded-xl bg-surface-container-low items-start">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">100% Family Coverage</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Top-tier health, dental, and vision insurance premiums 100% employer-covered for you &amp; family.</span>
+</div>
+</div>
+<div class="flex gap-space-md p-space-md rounded-xl bg-surface-container-low items-start">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[22px]">spa</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">$3,500 Home &amp; Wellness</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Annual flexible allowance for ergonomic studio gear, fitness memberships, or mental health support.</span>
+</div>
+</div>
+<div class="flex gap-space-md p-space-md rounded-xl bg-surface-container-low items-start">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">flight_takeoff</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">6-Week Flexible PTO</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Encouraged minimum 30 days off annually plus 12 company holidays and rest recharge weeks.</span>
+</div>
+</div>
+<div class="flex gap-space-md p-space-md rounded-xl bg-surface-container-low items-start">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary-container text-[22px]">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">$2,500 Learning Grant</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Annual budget for books, research journals, and attending global distributed systems symposia.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container">
+<span class="material-symbols-outlined text-primary text-[24px]">family_restroom</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">16-Week Gender-Neutral Parental Leave</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fully compensated leave for birthing, non-birthing, and adoptive parents, anytime during the first year.</span>
+</div>
+</div>
+</div>
+<!-- Decision & Signature Hub -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md flex flex-col gap-space-lg" id="decision-hub">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Formal Confirmation</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Offer Acceptance &amp; Sign</h2>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+            Step 1 of 1
+          </span>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              By checking the box below and typing your full legal name, you accept CloudScale Technologies' offer for the Staff Distributed Systems Engineer (L6) role, commencing on January 13, 2025 (or mutually agreed start date), subject to standard verification.
+            </p>
+<label class="flex items-start gap-3 cursor-pointer pt-space-xs select-none">
+<input class="mt-1 w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer accent-primary" id="accept-check" onchange="toggleSignButton()" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">
+                I have reviewed the CloudScale compensation blueprint, confidentiality terms, and role expectations, and gladly accept this offer.
+              </span>
+</label>
+</div>
+<!-- Digital Signature Box -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="signature-name">Full Legal Name (Digital Signature)</label>
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" id="signature-name" oninput="toggleSignButton()" type="text" value="Elena Rostova"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Execution Date</label>
+<div class="w-full px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-body-md text-body-md select-none">
+                November 11, 2024 (Timestamped)
+              </div>
+</div>
+</div>
+<!-- Action Submission -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">lock</span>
+              Encrypted 256-bit candidate signing session
+            </div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-md" id="sign-btn" onclick="celebrateAcceptance()" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Sign &amp; Accept Offer
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Qualitative Passport & Team Warmth (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- Verified Skills & Peer Commendation Passport -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="font-label-sm text-label-sm text-tertiary font-semibold uppercase tracking-wider">Candidate Narrative Passport</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Panel Reflections &amp; Journey</h2>
+</div>
+<span class="p-2 rounded-full bg-tertiary/10 text-tertiary">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          We practice human-centric peer evaluation. Here is the qualitative feedback your interview panel recorded across your four sessions.
+        </p>
+<!-- Qualitative Commendation 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs relative overflow-hidden">
+<div class="flex items-center gap-space-sm mb-1">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Close up professional portrait of Marcus Vance, Principal Distributed Systems Architect, smiling with soft rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYtu2Zdx90uExQZbLBto7BXSvqpXNRZFGpXTc-Nn4BAYWD3oDcgqvE6-h0bo2iIGFnUDnG9kbr9aSyrtjfo2SRN52AJcUtgNbh3ej8L9YhZcZOlJ48m463YgIpwyrTXIoQ-_78XbRfuzvk1knyqEDJieCpWsSwzsK3i4WHtPZC88WbXtah1OK-v6h5U4bPssKqyBNELtPrvRpkJqLkdacgRsWTPqOz-7cY2AGvcISj50NiW3jmWBiQEw"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Marcus Vance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Principal Architect • Panel Lead</span>
+</div>
+</div>
+<blockquote class="font-body-md text-body-md text-on-surface italic leading-relaxed">
+            “Elena’s walkthrough of multi-region replication and consensus edge cases was one of the clearest whiteboard sessions our team has experienced. Her collaborative humility and instinct to validate assumptions made the conversation an absolute joy.”
+          </blockquote>
+</div>
+<!-- Qualitative Commendation 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs relative overflow-hidden">
+<div class="flex items-center gap-space-sm mb-1">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of Maya Lin, Engineering Lead, smiling with warmth in a bright modern tech design studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv-dy_H6eYYni96BR3M9DlAWPKtgIh68UWuGwDpVbDGfybVuOIRjitxpoZjtXVemhAw3kHswjYvJdOwxgcqnn_ax6foySavtgwSuEDpJ9YMk_bbkyVKtfmj-euE61sy1gbWKV0rIvaMrtx_YoQjui2bBaUkY0dtfmGsDFmupdU1AsZkbQaUMJ64FuOdMNLF9pQzC1O0WlK6T9K0O4JRoQu5v3OouMpmyJhcAqZR1oF5acFFxP6vwggZA"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Maya Lin</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Engineering Lead • Core Storage</span>
+</div>
+</div>
+<blockquote class="font-body-md text-body-md text-on-surface italic leading-relaxed">
+            “Elena immediately treated our pair-programming drill as a true engineering team whiteboard. Clear code, calm trade-off reasoning, and great warmth.”
+          </blockquote>
+</div>
+<!-- Commendation Badges -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Unanimous Peer Badges</span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">hub</span>
+              Consensus Architecture &amp; Raft
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">balance</span>
+              System Trade-off Grace
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sentiment_satisfied</span>
+              Empathetic Communication
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">healing</span>
+              Fault Recovery Pragmatism
+            </span>
+</div>
+</div>
+<!-- Dimension Ratings -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">System Reliability &amp; Scale</span>
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Exemplary
+            </span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="w-[96%] h-full bg-tertiary"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mt-1">
+<span class="text-on-surface font-medium">Code Simplicity &amp; Clarity</span>
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Strong
+            </span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="w-[88%] h-full bg-tertiary"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm mt-1">
+<span class="text-on-surface font-medium">Cross-functional Co-creation</span>
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Exemplary
+            </span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
+<div class="w-[98%] h-full bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Meet Your Future Team & Warm Welcomes -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<div class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Teammate Notes</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Meet Your Team</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">3 Welcomes</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Teammate 1 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl hover:bg-surface-container-low transition-colors">
+<img class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="Portrait of Alex Miller, VP of Engineering, looking friendly and welcoming in casual attire against an urban loft backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANE3gj148k4GX0Cfo8sRH2dKDBG2PKlzb7qpl_CeHlBjpLfQ-qamSppLR1Ye04GXLy1CJrgXWHPOn0GB7xI_UiFnKdEaTCgCnv8geHKBX4MqMNZVZkWxkrKCp4ldWUWWjWPcEbABeoyhGXkWvv84on9nQKSHrs0BYwg87nhsywzdJf1CZvRvbiseEZv1LfcOZOnLKjA9rPeYs3KjB9_6zkD8SlaWFn4G2iW6bmwL8DPvCk7_jGKnR53g"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Alex Miller</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">• VP Engineering</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                “Can't wait to partner on the next-gen event streaming pipeline, Elena!”
+              </p>
+</div>
+</div>
+<!-- Teammate 2 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl hover:bg-surface-container-low transition-colors">
+<img class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="Warm studio photo of Sarah Jin, Staff Product Manager, smiling with gentle natural expression, modern tech office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrMI0oRoIevUxY3oAESZYX6Yu2j6DwXt3XdLYWxqKmDHyCV-Ic0CLl1oxUTe9GcZHSdBUoIAyS1sotKP4mRLDo9UMCtJxUzc9yZ4l_t5pFER4cZFJN5i-K7BewC59vLtUA9_LwqHpGb27-trQ7HFfuLlITGgsLgAh2EnnAfI3nogn30P0WMEapAMJrBWhgTia_5m7EAn2oRG-voCjNc7hTQQRwl0PDRHnsFFIfN6CWyXP1jvFjVbB4SA"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Sarah Jin</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">• Staff PM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                “Excited to bring your distributed systems vision to our candidate experience platform!”
+              </p>
+</div>
+</div>
+<!-- Teammate 3 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl hover:bg-surface-container-low transition-colors">
+<img class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="Casual portrait of Dan Vogel, Senior Staff Architect, holding a ceramic tea mug with a friendly warm smile in a quiet library space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr9ocUhnszIdRkcib35AkBU0xV5d3YRcdSKShhJ-KZjOc-kHuv4CIgDA_fKvLRiqb5b4UxqID_qgFtuhiu7CGjkzblhm2Ll2xdGFdGpC5BFmN16SCykgmRuDjCycAyAx7T4cSzLd-naiunT4IqZ3JewSzlvWoHPzAyfadHUstkoQeO7Wvy2cqiDHD_GfwTAf1ZpwverHIea4kX_CVwaMKSmKxo8-an6f4dizeJv8VI0TPQbZd1MAaC2A"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Dan Vogel</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">• Sr. Staff Architect</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                “Looking forward to our weekly architecture tea!”
+              </p>
+</div>
+</div>
+</div>
+<!-- Quick Reply Box -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Send a quick greeting to the team channel</label>
+<div class="relative">
+<input class="w-full pl-4 pr-12 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary" id="quick-msg" placeholder="e.g., Thank you all, looking forward to creating together!" type="text"/>
+<button class="absolute right-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-md bg-primary text-on-primary hover:bg-primary-container transition-colors" onclick="sendTeamHello()" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<span class="hidden font-body-sm text-body-sm text-tertiary flex items-center gap-1" id="reply-status">
+<span class="material-symbols-outlined text-[16px]">check</span> Message broadcasted to #team-platforms!
+          </span>
+</div>
+</div>
+<!-- Candidate Concierge Help Card -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold">Dedicated Concierge Service</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Questions regarding start date, equity, or relocation?</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Jordan is available via Slack Connect or a no-pressure 15-minute clarification call at your convenience.
+        </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors" onclick="alert('Opening Slack Connect invite link for Elena Rostova &lt;-&gt; Jordan Lee...')" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span> Chat on Slack
+          </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors shadow-sm" onclick="document.getElementById('concierge-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span> Book 15m Sync
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal: Schedule Call with Concierge -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-4" id="concierge-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-xl p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Schedule Host Conversation</h3>
+<button class="p-1 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors" onclick="document.getElementById('concierge-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Select a convenient 15-minute slot with Jordan Lee to walk through benefit questions or start timeline flexibility.
+      </p>
+<div class="flex flex-col gap-2">
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-left transition-colors" onclick="confirmSlot('Tomorrow, 10:00 AM PST')" type="button">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Tomorrow, Nov 12</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">10:00 AM – 10:15 AM PST</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-left transition-colors" onclick="confirmSlot('Wednesday, 2:30 PM PST')" type="button">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Wednesday, Nov 13</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">2:30 PM – 2:45 PM PST</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-left transition-colors" onclick="confirmSlot('Thursday, 11:30 AM PST')" type="button">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Thursday, Nov 14</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">11:30 AM – 11:45 AM PST</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">chevron_right</span>
+</button>
+</div>
+<div class="pt-2 flex justify-end">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md" onclick="document.getElementById('concierge-modal').classList.add('hidden')" type="button">Close</button>
+</div>
+</div>
+</div>
+<!-- Modal: Celebratory Confetti Acceptance Notification -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/50 backdrop-blur-md p-4" id="celebration-modal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-2xl p-space-xl shadow-2xl flex flex-col items-center text-center gap-space-md">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary animate-bounce">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Welcome to CloudScale Technologies</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Welcome Aboard, Elena!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+          Your signed offer has been recorded and encrypted. An executed copy along with your CloudScale Welcome Onboarding Kit has been dispatched to your email.
+        </p>
+</div>
+<div class="w-full bg-surface-container-low rounded-xl p-space-md text-left flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Status</span>
+<span class="text-tertiary font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Offer Accepted
+          </span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Role</span>
+<span class="text-on-surface font-semibold">Staff Distributed Systems Engineer</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Team</span>
+<span class="text-on-surface font-semibold">Distributed Platforms</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Starting Date</span>
+<span class="text-on-surface font-semibold">January 13, 2025</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" onclick="document.getElementById('celebration-modal').classList.add('hidden')" type="button">
+        Go to Onboarding Passport Dashboard
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function switchCompView(mode) {
+    const btnY1 = document.getElementById('toggle-y1');
+    const btn4Y = document.getElementById('toggle-4y');
+    const totalCaption = document.getElementById('total-caption');
+    const compTotal = document.getElementById('comp-total');
+    const compSubtext = document.getElementById('comp-subtext');
+    const allocationSplit = document.getElementById('allocation-split');
+    const barBase = document.getElementById('bar-base');
+    const barRsu = document.getElementById('bar-rsu');
+    const barBonus = document.getElementById('bar-bonus');
+    const valBase = document.getElementById('val-base');
+    const valEquity = document.getElementById('val-equity');
+    const subEquity = document.getElementById('sub-equity');
+    const valBonus = document.getElementById('val-bonus');
+
+    if (mode === '4y') {
+      btn4Y.className = 'px-4 py-1.5 rounded-full font-label-sm text-label-sm bg-surface text-on-surface shadow-sm transition-all';
+      btnY1.className = 'px-4 py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all';
+
+      totalCaption.textContent = 'Four-Year Target Total Realization';
+      compTotal.textContent = '$1,380,000';
+      compSubtext.textContent = 'USD / 4-year cumulative value';
+
+      allocationSplit.textContent = 'Base ($960k) • RSUs ($380k) • Sign-on ($40k)';
+      barBase.style.width = '70%';
+      barRsu.style.width = '27%';
+      barBonus.style.width = '3%';
+
+      valBase.textContent = '$960,000';
+      valEquity.textContent = '$380,000';
+      subEquity.textContent = '100% fully vested over 4 years';
+      valBonus.textContent = '$40,000';
+    } else {
+      btnY1.className = 'px-4 py-1.5 rounded-full font-label-sm text-label-sm bg-surface text-on-surface shadow-sm transition-all';
+      btn4Y.className = 'px-4 py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all';
+
+      totalCaption.textContent = 'Total Target Compensation (Year 1)';
+      compTotal.textContent = '$375,000';
+      compSubtext.textContent = 'USD / first 12 months';
+
+      allocationSplit.textContent = 'Base (64%) • RSUs (25%) • Bonus (11%)';
+      barBase.style.width = '64%';
+      barRsu.style.width = '25%';
+      barBonus.style.width = '11%';
+
+      valBase.textContent = '$240,000';
+      valEquity.textContent = '$95,000 / yr';
+      subEquity.textContent = '$380,000 total (4-yr schedule)';
+      valBonus.textContent = '$40,000';
+    }
+  }
+
+  function toggleSignButton() {
+    const isChecked = document.getElementById('accept-check').checked;
+    const sigName = document.getElementById('signature-name').value.trim();
+    const btn = document.getElementById('sign-btn');
+    if (isChecked && sigName.length > 2) {
+      btn.disabled = false;
+      btn.classList.remove('opacity-50', 'cursor-not-allowed');
+    } else {
+      btn.disabled = true;
+      btn.classList.add('opacity-50', 'cursor-not-allowed');
+    }
+  }
+
+  function celebrateAcceptance() {
+    const isChecked = document.getElementById('accept-check').checked;
+    if (!isChecked) {
+      alert('Please check the verification acknowledgement box before signing.');
+      return;
+    }
+    document.getElementById('celebration-modal').classList.remove('hidden');
+  }
+
+  function sendTeamHello() {
+    const msg = document.getElementById('quick-msg').value;
+    if (!msg.trim()) return;
+    const status = document.getElementById('reply-status');
+    status.classList.remove('hidden');
+    document.getElementById('quick-msg').value = '';
+    setTimeout(() => {
+      status.classList.add('hidden');
+    }, 4500);
+  }
+
+  function confirmSlot(slotText) {
+    alert('Thank you! Calendar invite confirmed for ' + slotText + '. A calendar link and Google Meet URL have been added to your HireRoom schedule.');
+    document.getElementById('concierge-modal').classList.add('hidden');
+  }
+
+  // Initial trigger for signature check
+  toggleSignButton();
+</script></div></main><footer class="w-full bg-surface-container-low mt-auto"><div class="max-w-[1128px] mx-auto px-margin-mobile md:px-margin py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">© 2025 HireRoom Inc. Warm hospitality in modern talent management.</p><div class="flex flex-wrap items-center justify-center gap-space-md"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="candidate-guide" href="#">Candidate Guide</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-transparency" href="#">Privacy &amp; Transparency</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="accessibility" href="#">Accessibility</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-contact" href="#">Help &amp; Contact</a></div></div></footer></body></html>

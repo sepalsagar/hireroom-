@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HireRoom</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface": "#fcf9f8",
+          "tertiary-fixed-dim": "#74d6db",
+          "surface-container-lowest": "#ffffff",
+          "secondary-container": "#e51344",
+          "on-tertiary-fixed": "#002021",
+          "on-error-container": "#93000a",
+          "outline-variant": "#e5bdbe",
+          "inverse-on-surface": "#f3f0ef",
+          "tertiary": "#00676b",
+          "background": "#fcf9f8",
+          "secondary-fixed-dim": "#ffb3b5",
+          "primary-fixed-dim": "#ffb2b6",
+          "on-primary-container": "#fffbff",
+          "surface-dim": "#dcd9d9",
+          "primary-container": "#e21e4a",
+          "on-surface": "#1b1c1c",
+          "on-tertiary-fixed-variant": "#004f52",
+          "tertiary-container": "#008287",
+          "surface-variant": "#e5e2e1",
+          "on-secondary-fixed": "#40000b",
+          "on-error": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "inverse-primary": "#ffb2b6",
+          "primary-fixed": "#ffdada",
+          "surface-container-low": "#f6f3f2",
+          "secondary": "#ba0033",
+          "surface-container": "#f0eded",
+          "on-surface-variant": "#5c3f41",
+          "secondary-fixed": "#ffdada",
+          "inverse-surface": "#303030",
+          "surface-container-high": "#eae7e7",
+          "surface-bright": "#fcf9f8",
+          "outline": "#906f70",
+          "on-tertiary-container": "#f3ffff",
+          "surface-container-highest": "#e5e2e1",
+          "on-secondary-fixed-variant": "#920026",
+          "tertiary-fixed": "#91f2f7",
+          "surface-tint": "#be0038",
+          "primary": "#ba0036",
+          "error-container": "#ffdad6",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#40000d",
+          "on-secondary-container": "#fffbff",
+          "on-primary-fixed-variant": "#920029",
+          "error": "#ba1a1a",
+          "on-primary": "#ffffff",
+          "on-background": "#1b1c1c"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem",
+          "gutter-mobile": "1rem",
+          "space-xl": "2.5rem",
+          "margin-mobile": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "margin": "2.5rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "label-lg": ["Inter"],
+          "headline-xl-mobile": ["Inter"],
+          "headline-lg-mobile": ["Inter"],
+          "body-lg": ["Inter"],
+          "headline-md": ["Inter"],
+          "headline-sm": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-lg": ["Inter"],
+          "label-md": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-xl": ["Inter"],
+          "body-sm": ["Inter"]
+        },
+        "fontSize": {
+          "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500"}],
+          "headline-xl-mobile": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "label-md": ["14px", {"lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="job-openings" href="#"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(186,0,54,0.25)] group-hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-on-primary text-[22px]">meeting_room</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">HireRoom</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">Human Talent Suite</span></div></a><div class="hidden xl:flex items-center bg-surface-container-low rounded-full p-space-xs shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_14px_rgba(0,0,0,0.08)] transition-all"><div class="px-space-md py-space-xs flex flex-col justify-center cursor-pointer"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Roles</span><input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline w-44 p-0 focus:ring-0" placeholder="Search titles, skills..." type="text"/></div><div class="h-6 w-px bg-surface-container-high"></div><div class="px-space-md py-space-xs flex flex-col justify-center cursor-pointer"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Location</span><span class="font-body-sm text-body-sm text-on-surface-variant">Remote / Hybrid</span></div><button class="w-9 h-9 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">search</span></button></div></div><nav class="hidden lg:flex items-center p-space-xs bg-surface-container-low/70 rounded-full" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-full"><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="candidates" href="#">Candidates</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="interviews" href="#">Interviews</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="practice-arena" href="#">Practice Arena</a><a class="px-space-md py-space-sm rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="job-openings" href="#">Job Openings</a></nav><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center bg-surface-container-high p-1 rounded-full"><button class="px-space-md py-1 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface shadow-sm" type="button">Recruiter</button><button class="px-space-md py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">Candidate</button></div><button aria-label="Notifications" class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 flex-1 bg-surface"><div class="flex flex-col w-full text-on-surface">
+<!-- Subtle Ambient Glow Orbs contained within canvas -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 right-12 w-96 h-96 rounded-full bg-gradient-to-br from-primary/10 via-primary-container/5 to-transparent blur-3xl pointer-events-none"></div>
+<div class="absolute top-96 -left-20 w-80 h-80 rounded-full bg-gradient-to-tr from-tertiary/10 via-surface-soft/40 to-transparent blur-3xl pointer-events-none"></div>
+<div class="w-full max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-10 space-y-8 sm:space-y-12">
+<!-- Top Welcome + Next Interview Sticky Hero Card (Warm Bento Layout) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+<!-- Welcome Editorial Column -->
+<div class="lg:col-span-7 bg-surface-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-card via-surface-card to-surface-soft/50 opacity-90 pointer-events-none"></div>
+<div class="relative z-10 space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-soft text-ink shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wide">Candidate Sanctuary</span>
+<span class="text-muted-soft text-body-sm">•</span>
+<span class="font-label-sm text-label-sm text-muted">Warm Human Mode</span>
+</div>
+<div class="space-y-2">
+<h1 class="font-display-xl text-display-xl text-ink tracking-tight font-bold">
+                Welcome back, Elena!
+              </h1>
+<p class="font-body-md text-body-md text-body max-w-xl leading-relaxed">
+                Interviews are just great team conversations. Take your time, get comfortable, and do your best thinking.
+              </p>
+</div>
+</div>
+<div class="relative z-10 pt-6 mt-6 flex flex-wrap items-center gap-4">
+<div class="flex items-center -space-x-2">
+<div class="w-9 h-9 rounded-full bg-surface-soft flex items-center justify-center text-ink text-body-sm font-semibold shadow-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Warm studio portrait of friendly senior software engineer mentor smiling gently with soft ambient natural lighting against dark charcoal studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9KVQxOA6iUX977bz7XZ8HEfW247XSs53CE3GjTuYJQflv2omWL8prscQRVMSvlMvrwGymnyT6g-V-ws-2bR1eIOBAMG3U-ZQlYTWNNkX0Ayr6lpq-GuTgFzHHbaeJfyrRm-G-JWaMeJ57WGekiDhbZaaiVQbCw9iEnyLLotrN93-YbU5TTbZnv6m93cQydIAG1c6RjK9a3chotCToYNuoLkSsXXZ125F77j3gHP43bfdSUmCC16Ozzg"/>
+</div>
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-ink text-body-sm font-semibold shadow-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Candid headshot of supportive engineering leader with glasses smiling encouragingly in warm modern workspace with slate grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBot8-7iPRlbZMo_DEB2tibKuVB_rdY5VkdXgLHA1a13RnSoFGjAmig3yLmDVm8o01W21FY4NvBAT3cmb55dc1ZXYygtH9sXUkFy5Un4wAbix9QNm_pNgY3No05-el7Ql39GWqsYDMXIUIXtx3yMJwzdte2uEWtd6KPLdNyfMaZF6hJIhjekYGHJyOieN5sdL_HJK6huS-Mc9-CMEmbVD6xP3BjJMveptQmZK2PhiQuHs3i_8vlIdEllA"/>
+</div>
+<div class="w-9 h-9 rounded-full bg-surface-strong flex items-center justify-center text-ink font-label-sm text-label-sm shadow-sm">
+                +4
+              </div>
+</div>
+<p class="font-body-sm text-body-sm text-muted">
+<span class="text-ink font-medium">6 team members</span> have left notes welcoming your authentic voice today.
+            </p>
+</div>
+</div>
+<!-- Next Interview Live Widget -->
+<div class="lg:col-span-5 bg-gradient-to-b from-surface-card to-surface-container-low rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="space-y-4 relative z-10">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-strong text-ink shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-star-rating" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="font-label-sm text-label-sm font-semibold text-ink">Upcoming Session</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary">
+                Confirmed Room
+              </span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-star-rating uppercase tracking-wider font-semibold">Today • 2:00 PM (In 42 mins)</p>
+<h2 class="font-headline-lg text-headline-lg text-ink mt-1">Distributed Systems Engineer</h2>
+<p class="font-body-sm text-body-sm text-muted mt-1">CloudScale Technologies • 45 min deep-dive</p>
+</div>
+<div class="flex items-center gap-3.5 p-3.5 rounded-xl bg-surface-soft shadow-sm">
+<div class="w-11 h-11 rounded-full overflow-hidden flex-shrink-0 bg-surface-container-high shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Portrait of Marcus Vance, experienced friendly hiring lead wearing knit sweater, smiling warm natural lighting, cozy dark grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7kqZfgmGevPvq-lgbDFsH6yHOewkfGgW1KpMTuB3qZklzU5FDqAcQDV8o_-YGayARTcBYduiYjfdYF_vvZWA_NGkhnFRxpbdP9gIwkcYjJK__g2WG0b_ZviLnYyxHNWKRv0D3jdA4Rc6kEgeaXWi-UhbKVtz3NYln2IhFR0ewaE0pMilhrdtphHu8aS1mm1RDUUwTFlRQt2jnDqvnlwGHEWeCSeSggJbPtEKcvY9Fg74LFNAdeqQZYg"/>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-title-sm text-title-sm text-ink truncate">Marcus Vance</p>
+<p class="font-body-sm text-body-sm text-muted truncate">Hiring Lead &amp; Principal Architect</p>
+</div>
+<div class="flex items-center gap-1 text-star-rating" title="Host Quality Rating">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-ink font-semibold">4.98</span>
+</div>
+</div>
+</div>
+<div class="pt-6 relative z-10 flex flex-col sm:flex-row items-center gap-3">
+<button class="w-full sm:flex-1 h-12 rounded-xl bg-primary-container hover:bg-primary-active text-on-dark font-title-md text-title-md flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-primary-container/25 active:scale-[0.98]" id="testMediaBtn">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span>Test Audio &amp; Video</span>
+</button>
+<button class="w-full sm:w-auto h-12 px-4 rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-title-sm text-title-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-sm" title="View Conversation Agenda">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span class="sm:hidden">Agenda</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Media Check Quick Flyout (Interactive micro-state) -->
+<div class="hidden transition-all duration-300 bg-surface-card rounded-2xl p-6 shadow-xl" id="mediaCheckPanel">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink">Lounge Hardware Readiness</h3>
+<p class="font-body-sm text-body-sm text-muted">Crisp audio and warm camera feeds ready for Marcus</p>
+</div>
+</div>
+<button class="text-muted hover:text-ink transition-colors p-1" id="closeMediaCheck">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-soft flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[22px]">videocam</span>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-ink truncate">Studio Display HD (1080p)</p>
+<p class="font-body-sm text-body-sm text-tertiary">Natural warm exposure ok</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-soft flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[22px]">mic</span>
+<div class="min-w-0 flex-1">
+<p class="font-label-sm text-label-sm text-ink truncate">Shure MV7 USB Mic</p>
+<div class="w-full bg-surface-strong h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full w-4/5 animate-pulse"></div>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-soft flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[22px]">wifi</span>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-ink">Ultra-low Ping (18ms)</p>
+<p class="font-body-sm text-body-sm text-muted">Fiber connection stable</p>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 1: Practice Lounge -->
+<section class="space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-muted">Self-Paced Space</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-ink font-bold">Your Practice Lounge</h2>
+<p class="font-body-sm text-body-sm text-body mt-0.5">Zero pressure, no evaluation timer. Play, sketch, and warm up your voice at your own rhythm.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-3 py-1.5 rounded-full bg-surface-soft text-muted">
+              Auto-saved locally
+            </span>
+</div>
+</div>
+<!-- 3 Low-pressure Lounge Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Warm-up Coding Drills -->
+<div class="bg-surface-card rounded-2xl p-6 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 group">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface-soft flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-[26px]">terminal</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-soft font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> 3 of 4 Complete
+                </span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink group-hover:text-primary transition-colors">Warm-up Coding Drills</h3>
+<p class="font-body-sm text-body-sm text-muted mt-1 leading-relaxed">
+                  Gentle pacing, sliding windows &amp; clean logic. Friendly syntax checks without harsh unit test buzzers.
+                </p>
+</div>
+<!-- Mini Progress Visualization -->
+<div class="space-y-2 pt-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-body">Sliding Window Mastery</span>
+<span class="text-ink font-semibold">75%</span>
+</div>
+<div class="w-full bg-surface-strong h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-primary-container h-full rounded-full w-3/4"></div>
+</div>
+<p class="text-[12px] font-body-sm text-muted-soft">Up next: Two-pointer string decompression drill</p>
+</div>
+</div>
+<div class="pt-6 mt-4">
+<button class="w-full py-3 px-4 rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-title-sm text-title-sm flex items-center justify-center gap-2 transition-colors">
+<span>Resume Gentle Drill</span>
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Interactive Architecture Board -->
+<div class="bg-surface-card rounded-2xl p-6 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 group">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface-soft flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-[26px]">draw</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-soft font-label-sm text-label-sm text-ink">
+                  Canvas Board
+                </span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink group-hover:text-tertiary transition-colors">Interactive Architecture Board</h3>
+<p class="font-body-sm text-body-sm text-muted mt-1 leading-relaxed">
+                  Sketch systems with drag-and-drop components: Load Balancers, Kafka Queues, Sharded Redis caches, and Write Buffers.
+                </p>
+</div>
+<!-- Inline Canvas Preview Graphic -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-center relative overflow-hidden">
+<svg class="w-full h-20 text-muted-soft" fill="none" viewbox="0 0 280 80">
+<rect fill="#252529" height="32" rx="6" stroke="#3a3a40" stroke-width="1.5" width="60" x="10" y="24"></rect>
+<text fill="#f5f5f7" font-family="Inter" font-size="9" font-weight="600" text-anchor="middle" x="40" y="44">Client</text>
+<path d="M72 40 L108 40" stroke="#ff385c" stroke-dasharray="3 3" stroke-width="2"></path>
+<rect fill="#201f21" height="48" rx="6" stroke="#ff5169" stroke-width="1.5" width="65" x="110" y="16"></rect>
+<text fill="#ffb2b6" font-family="Inter" font-size="9" font-weight="600" text-anchor="middle" x="142" y="38">Gateway</text>
+<text fill="#8e8e93" font-family="Inter" font-size="7.5" text-anchor="middle" x="142" y="52">Envoy Proxy</text>
+<path d="M177 32 L210 22" stroke="#62dca3" stroke-width="2"></path>
+<path d="M177 48 L210 58" stroke="#62dca3" stroke-width="2"></path>
+<rect fill="#252529" height="26" rx="4" stroke="#3a3a40" stroke-width="1.5" width="58" x="212" y="8"></rect>
+<text fill="#80f9bd" font-family="Inter" font-size="8" text-anchor="middle" x="241" y="24">Go Nodes</text>
+<rect fill="#252529" height="26" rx="4" stroke="#3a3a40" stroke-width="1.5" width="58" x="212" y="46"></rect>
+<text fill="#d1d1d6" font-family="Inter" font-size="8" text-anchor="middle" x="241" y="62">Event Bus</text>
+</svg>
+</div>
+</div>
+<div class="pt-6 mt-4">
+<button class="w-full py-3 px-4 rounded-xl bg-surface-soft hover:bg-surface-strong text-ink font-title-sm text-title-sm flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>Open Sketch Canvas</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Friendly Practice Mock -->
+<div class="bg-surface-card rounded-2xl p-6 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 group">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface-soft flex items-center justify-center text-star-rating group-hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-[26px]">record_voice_over</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-soft font-label-sm text-label-sm text-muted">
+                  Warm Prompts
+                </span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-ink group-hover:text-primary transition-colors">Friendly Practice Mock</h3>
+<p class="font-body-sm text-body-sm text-muted mt-1 leading-relaxed">
+                  Talk through your thought process out loud with encouraging prompts. Practice narrative pacing with zero scoring stress.
+                </p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-soft space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">spa</span>
+<span class="font-label-sm text-label-sm text-ink">Suggested Warmup Prompt:</span>
+</div>
+<p class="font-body-sm text-body-sm text-body italic leading-snug">
+                  "How would you explain the trade-offs between consistency and latency to a curious junior teammate?"
+                </p>
+</div>
+</div>
+<div class="pt-6 mt-4">
+<button class="w-full py-3 px-4 rounded-xl bg-primary-container hover:bg-primary-active text-on-dark font-title-sm text-title-sm flex items-center justify-center gap-2 transition-colors shadow-md shadow-primary-container/20">
+<span class="material-symbols-outlined text-[18px]">mic_none</span>
+<span>Begin Voice Warmup</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Verified Skills & Endorsements -->
+<section class="space-y-6 pt-4">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-muted">Authentic Reputation</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-ink font-bold">Your Verified Skills &amp; Endorsements</h2>
+<p class="font-body-sm text-body-sm text-body mt-0.5">Real engineers who have collaborated with Elena and vouch for her craftsmanship.</p>
+</div>
+<span class="font-label-sm text-label-sm text-muted">
+            3 Competencies Verified • 100% Peer Confirmed
+          </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Competency Card 1: Distributed Systems -->
+<div class="bg-surface-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-soft">
+<span class="material-symbols-outlined text-[16px] text-primary">hub</span>
+<span class="font-label-sm text-label-sm text-ink font-semibold">Distributed Systems</span>
+</div>
+<div class="flex items-center gap-1 text-star-rating">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm text-ink font-bold">9 Endorsements</span>
+</div>
+</div>
+<blockquote class="font-body-sm text-body-sm text-body leading-relaxed pt-2">
+                "Elena has an uncanny ability to dissect split-brain scenarios and consensus edge cases without over-engineering. She architected our multi-region replication protocol seamlessly."
+              </blockquote>
+</div>
+<div class="pt-6 mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-soft shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Warm portrait of Alex Mercer, Staff Engineer, friendly expression, subtle glasses, cozy soft light against warm dark studio wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1sas6BqEOfP6aFCZF9xOT07Me1dp1-dkHYydtuSQHQhOb36nYSrhBgiJJ8_VWqThPttIyl0zCZA8Pfe6ZQPbJ8egs83EEy5JgLb_VehU0cE3fR3hYiovHrk0lxTyP3eX3Nu_nKWFtHiD4FJwM8v8q63vOwvP80AywwCK8ipVFIHo9rMb2oOiHhv5EnUX3H1zUzlzdgx_iNy_1sSzMRAI8R1hvSkkKvWJ5NCCijHBAFFNHPtOkYoG4xw"/>
+</div>
+<div class="min-w-0">
+<p class="font-title-sm text-title-sm text-ink truncate">Alex Mercer</p>
+<p class="font-body-sm text-body-sm text-muted truncate">Staff Engineer @ LatticeGrid</p>
+</div>
+</div>
+</div>
+<!-- Competency Card 2: Concurrent Go -->
+<div class="bg-surface-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-soft">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bolt</span>
+<span class="font-label-sm text-label-sm text-ink font-semibold">Concurrent Go</span>
+</div>
+<div class="flex items-center gap-1 text-star-rating">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm text-ink font-bold">14 Endorsements</span>
+</div>
+</div>
+<blockquote class="font-body-sm text-body-sm text-body leading-relaxed pt-2">
+                "Her channel primitives and goroutine pool management are the cleanest code in our repo. Elena prioritizes memory safety and crystal-clear channel closure semantics every single time."
+              </blockquote>
+</div>
+<div class="pt-6 mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-soft shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Portrait of Priyah Nadir, Principal Platform Engineer smiling warmly with soft ambient rim lighting against charcoal modern office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJTmZ5p2v55DZlVzz9ZgW1WsJdpfbcoREPd0_kpaD2nsOfjq1waQiGlfjXBZ0NSasjeWQW1YqkoG9tFbVk9PfEzt-pn41gJyYPBcrNyjQrDFGNeQDGoewB0DACLaYmipKxhWwfkZdz1nr0rEQwI0d46Q4mZMNqu3hhkcJRGZJSZU11IFvVTG2s9o3GFy-swCvHBnRVt4M3NWtsi4EfODy-kbeX3YwmtIWTEaCnbDetAiUyBhJN7_ZXSg"/>
+</div>
+<div class="min-w-0">
+<p class="font-title-sm text-title-sm text-ink truncate">Priyah Nadir</p>
+<p class="font-body-sm text-body-sm text-muted truncate">Principal Platform Eng @ VectorFlow</p>
+</div>
+</div>
+</div>
+<!-- Competency Card 3: Scalability -->
+<div class="bg-surface-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-soft">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">stacked_line_chart</span>
+<span class="font-label-sm text-label-sm text-ink font-semibold">Scalability</span>
+</div>
+<div class="flex items-center gap-1 text-star-rating">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm text-ink font-bold">11 Endorsements</span>
+</div>
+</div>
+<blockquote class="font-body-sm text-body-sm text-body leading-relaxed pt-2">
+                "Elena guided our ingestion pipeline from 40k req/s to 450k req/s with zero dropped telemetry events. She pairs rock-solid telemetry intuition with thoughtful mentoring."
+              </blockquote>
+</div>
+<div class="pt-6 mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-soft shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Headshot of Daveed K., Engineering VP, warm and welcoming smile, dark charcoal textured backdrop, candid warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr5hvdfHwXGhj5902rRmRlS4T2-zvE5zgCfTBwd0ccsddjlC2D3YDy7ZwPckc6sN9-P_jJ5ugu8XpLk5i2unGifCNeKG50v_ynOEu8yqwX0S0NRPWAdWgmB4MrsL8XMbzhXRR14rMAeuUskYptglei5WIiXSt8BEQNW8NSxAkIuPPnBQ0cYGBkGaBoFUidIDOcAb_y6ljlXszAaFpSCqdCLkso4QaNEaITKc67HVU8dk1ry48v2zm6qQ"/>
+</div>
+<div class="min-w-0">
+<p class="font-title-sm text-title-sm text-ink truncate">Daveed K.</p>
+<p class="font-body-sm text-body-sm text-muted truncate">VP Infrastructure @ HyperStream</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Candidate Care Reminder (Hospitality & Warmth Banner) -->
+<section class="bg-gradient-to-r from-surface-card via-surface-soft to-surface-card rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+<div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
+<div class="w-16 h-16 rounded-2xl bg-primary-container/15 flex items-center justify-center flex-shrink-0 text-primary-container">
+<span class="material-symbols-outlined text-[34px]">self_improvement</span>
+</div>
+<div class="space-y-1 text-center md:text-left flex-1">
+<div class="inline-flex items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+<span>Candidate Care Reminder</span>
+</div>
+<p class="font-title-md text-title-md text-ink leading-relaxed font-normal">
+              Remember to stay hydrated, take a breath, and talk through your thinking — we value how you solve problems together, not memorized answers.
+            </p>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-strong text-muted text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">water_drop</span>
+<span>Glass of water ready</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Warm Footer Tagline -->
+<div class="pt-6 pb-2 text-center">
+<p class="font-title-md text-title-md text-muted tracking-tight font-medium">
+          HireRoom — Thoughtful hiring conversations made simple.
+        </p>
+<p class="font-body-sm text-body-sm text-muted-soft mt-1">
+          Designed with human warmth, hospitality, and quiet confidence.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for testing media toggle
+  const testMediaBtn = document.getElementById('testMediaBtn');
+  const mediaCheckPanel = document.getElementById('mediaCheckPanel');
+  const closeMediaCheck = document.getElementById('closeMediaCheck');
+
+  if (testMediaBtn && mediaCheckPanel) {
+    testMediaBtn.addEventListener('click', () => {
+      mediaCheckPanel.classList.toggle('hidden');
+      if (!mediaCheckPanel.classList.contains('hidden')) {
+        mediaCheckPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+
+  if (closeMediaCheck && mediaCheckPanel) {
+    closeMediaCheck.addEventListener('click', () => {
+      mediaCheckPanel.classList.add('hidden');
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="grid grid-cols-2 md:grid-cols-4 gap-space-lg mb-space-lg"><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Discovery</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="job-openings" href="#">Featured Openings</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="candidates" href="#">Active Talent Pool</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="practice-arena" href="#">Mock Assessments</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Evaluation</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="interviews" href="#">Live Rooms</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Scorecards &amp; Rubrics</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Async Video Prep</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">Community</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Interview Coaching</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Salary Benchmark</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Hiring Guides</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">HireRoom</span><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-primary">favorite</span><span class="font-body-sm text-body-sm">Built for warm, trusted human hiring.</span></div><p class="font-body-sm text-body-sm text-outline mt-space-xs">Accessible interview rooms and transparent hiring pathways for modern teams.</p></div></div><div class="pt-space-md border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2025 HireRoom Inc. All rights reserved.</span><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" href="#">Privacy</a><a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" href="#">Terms</a><a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" href="#">Trust &amp; Safety</a></div></div></div></footer></body></html>

@@ -1,0 +1,32 @@
+name: Supabase Project Keep-Alive
+
+on:
+  schedule:
+    # Run every Monday at 06:00 UTC (well within the 7-day inactivity pause window)
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        env:
+          SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: |
+          if [ -n "$SUPABASE_URL" ] && [ -n "$SUPABASE_KEY" ]; then
+            echo "Sending keep-alive request to Supabase REST health endpoint..."
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+              -H "apikey: $SUPABASE_KEY" \
+              -H "Authorization: Bearer $SUPABASE_KEY" \
+              "$SUPABASE_URL/rest/v1/")
+            echo "Response status: $HTTP_STATUS"
+            if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 400 ]; then
+              echo "Keep-alive ping successful. Supabase project remains active."
+            else
+              echo "Warning: Received HTTP $HTTP_STATUS. Please verify your Supabase keys in GitHub Secrets."
+            fi
+          else
+            echo "Supabase secrets not configured in this repository. Skipping ping."
+          fi

@@ -1,0 +1,11 @@
+{
+  "name": "HireRoom",
+  "description": "AI-assisted technical interview platform featuring live collaborative coding, objective telemetry co-pilot, practice lounge, and evidence-linked evaluations. Academic project by Sepal Sagar.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
