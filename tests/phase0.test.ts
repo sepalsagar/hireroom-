@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import crypto from 'crypto';
-import { initialMockStore } from '../lib/db';
 import * as schema from '../lib/db/schema';
 import {
   DodoPaymentsProvider,
@@ -8,7 +7,6 @@ import {
   
 } from '../lib/billing/billing-adapter';
 import { codeRunner } from '../lib/code-runner/runner-adapter';
-import { DEMO_PROFILES } from '../lib/auth/profiles';
 import { verifyServerSession } from '../lib/auth/server-guard';
 import {
   DEFAULT_GEMINI_MODEL,
@@ -134,13 +132,6 @@ describe('Phase 0: Foundations — Rigorous Behavior Test Suite', () => {
       expect(schema.webhookEvents).toBeDefined();
       expect(schema.consents).toBeDefined();
       expect(schema.auditLog).toBeDefined();
-    });
-
-    it('verifies Sepal Sagar is configured as super_admin in demo database', () => {
-      const sepal = initialMockStore.users.find((u) => u.email === 'sepalsagar1234@gmail.com');
-      expect(sepal).toBeDefined();
-      expect(sepal?.role).toBe('super_admin');
-      expect(sepal?.fullName).toBe('Sepal Sagar');
     });
 
     it('confirms official stable Gemini model is configured', () => {

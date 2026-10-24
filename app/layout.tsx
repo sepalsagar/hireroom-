@@ -6,6 +6,7 @@ import { DemoBanner } from '@/components/demo-banner';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { CookieBanner } from '@/components/cookie-banner';
+import { ClerkProvider } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
   title: 'HireRoom — Collaborative Technical Interview Platform',
@@ -28,8 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased flex flex-col">
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className="flex min-h-screen flex-col">
         <ThemeProvider>
           <AuthProvider>
             <DemoBanner />
@@ -39,7 +41,8 @@ export default function RootLayout({
             <CookieBanner />
           </AuthProvider>
         </ThemeProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

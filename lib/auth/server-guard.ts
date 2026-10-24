@@ -27,7 +27,8 @@ export async function verifyServerSession(
   let userId: string | null = null;
   try {
     ({ userId } = await auth());
-  } catch {
+    } catch (err) {
+    console.error('Clerk auth() failed:', err instanceof Error ? err.message : 'unknown');
     return deny(503, 'AUTH_UNAVAILABLE', 'Authentication service unavailable');
   }
   if (!userId) return deny(401, 'UNAUTHORIZED', 'Authentication required');

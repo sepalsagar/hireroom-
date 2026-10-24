@@ -1,91 +1,56 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { AuthContextType, UserProfile, UserRole } from './types';
-import { DEMO_PROFILES } from './profiles';
+import React, { createContext, useCallback, useContext, useMemo } from 'react';
+import { useClerk, useUser } from '@clerk/nextjs';
+import type { AuthContextType, UserProfile } from './types';
 
-export { DEMO_PROFILES };
-
-const AuthContext = createContext<AuthContextType>({
-  user: DEMO_PROFILES.interviewer,
-  isAuthenticated: true,
-  isLoading: false,
-  provider: 'mock-dev',
-  loginAs: () => {},
-  logout: () => {},
-  switchOrganization: () => {},
-});
+const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<UserProfile | null>(DEMO_PROFILES.interviewer);
-  const [isLoading, setIsLoading] = useState(false);
-  const isClerkConfigured = Boolean(
-    typeof process !== 'undefined' &&
-    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY &&
-    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY.startsWith('pk_')
+  const { isLoaded, user: clerkUser } = useUser();
+  const { signOut } = useClerk();
+
+  const user = useMemo<UserProfile | null>(() => {
+    if (!clerkUser) return null;
+
+    return {
+      id: clerkUser.id,
+      email: clerkUser.primaryEmailAddress?.emailAddress ?? '',
+      fullName:
+        clerkUser.fullName ??
+        clerkUser.username ??
+        clerkUser.primaryEmailAddress?.emailAddress ??
+        'Clerk user',
+      avatarUrl: clerkUser.imageUrl,
+      // Roles and organizations are resolved server-side from Postgres.
+      role: null,
+      organizationId: null,
+      organizationName: null,
+    };
+  }, [clerkUser]);
+
+  const logout = useCallback(async () => {
+    await signOut({ redirectUrl: '/' });
+  }, [signOut]);
+
+  const value = useMemo<AuthContextType>(
+    () => ({
+      user,
+      isAuthenticated: Boolean(user),
+      isLoading: !isLoaded,
+      provider: 'clerk',
+      logout,
+    }),
+    [isLoaded, logout, user],
   );
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      try {
-        const savedRole = localStorage.getItem('hireroom-active-role') as UserRole | null;
-        if (savedRole && DEMO_PROFILES[savedRole]) {
-          setUser(DEMO_PROFILES[savedRole]);
-        }
-      } catch {
-        // safe fallback
-      }
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const loginAs = (role: UserRole) => {
-    setIsLoading(true);
-    const profile = DEMO_PROFILES[role];
-    setUser(profile);
-    try {
-      localStorage.setItem('hireroom-active-role', role);
-    } catch {
-      // safe fallback
-    }
-    setIsLoading(false);
-  };
-
-  const logout = () => {
-    setUser(null);
-    try {
-      localStorage.removeItem('hireroom-active-role');
-    } catch {
-      // safe fallback
-    }
-  };
-
-  const switchOrganization = (orgId: string, orgName: string) => {
-    if (!user) return;
-    setUser({
-      ...user,
-      organizationId: orgId,
-      organizationName: orgName,
-    });
-  };
-
-  return (
-    <AuthContext.Provider
-      value={{
-        user,
-        isAuthenticated: Boolean(user),
-        isLoading,
-        provider: isClerkConfigured ? 'clerk' : 'mock-dev',
-        loginAs,
-        logout,
-        switchOrganization,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
 export function useAuth() {
-  return useContext(AuthContext);
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within AuthProvider');
+  }
+  return context;
 }

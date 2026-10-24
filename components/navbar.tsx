@@ -9,21 +9,17 @@ import {
   Briefcase,
   PlayCircle,
   Settings,
-  ChevronDown,
   Sparkles,
-  Shield,
   CreditCard,
   Menu,
   X,
 } from 'lucide-react';
 import { ThemeToggle } from './theme-toggle';
 import { useAuth } from '@/lib/auth/auth-context';
-import { UserRole } from '@/lib/auth/types';
 
 export function Navbar() {
   const pathname = usePathname();
-  const { user, loginAs, logout } = useAuth();
-  const [roleDropdownOpen, setRoleDropdownOpen] = useState(false);
+  const { user, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -34,13 +30,6 @@ export function Navbar() {
     { label: 'Rubric Studio', href: '/rubrics', icon: Sparkles },
     { label: 'Pricing', href: '/pricing', icon: CreditCard },
     { label: 'Settings', href: '/settings', icon: Settings },
-  ];
-
-  const roles: { role: UserRole; title: string; desc: string }[] = [
-    { role: 'super_admin', title: 'Super Admin', desc: 'System governance & org controls' },
-    { role: 'hiring_manager', title: 'Hiring Manager', desc: 'Pipelines, job creation, offers' },
-    { role: 'interviewer', title: 'Interviewer', desc: 'Live technical evaluations & scoring' },
-    { role: 'candidate', title: 'Candidate', desc: 'Practice lounge & skills passport' },
   ];
 
   return (
@@ -112,64 +101,26 @@ export function Navbar() {
           {/* Theme Switcher */}
           <ThemeToggle />
 
-          {/* Role Switcher Pill - Strictly disabled in production builds */}
-          {process.env.NODE_ENV !== 'production' ? (
-            <div className="relative">
+          {user ? (
+            <>
+              <span className="hidden md:inline max-w-40 truncate text-xs text-[var(--muted-foreground)]">
+                {user.fullName}
+              </span>
               <button
                 type="button"
-                onClick={() => setRoleDropdownOpen(!roleDropdownOpen)}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--surface-border)] bg-[var(--surface-subtle)] px-2.5 py-1.5 text-xs font-medium text-[var(--foreground)] hover:bg-[var(--surface-muted)] transition-colors"
-                aria-expanded={roleDropdownOpen}
-                aria-haspopup="true"
+                onClick={() => void logout()}
+                className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface-subtle)] px-2.5 py-1.5 text-xs font-medium text-[var(--foreground)] hover:bg-[var(--surface-muted)] transition-colors"
               >
-                <Shield className="h-3.5 w-3.5 text-[var(--primary)]" />
-                <span className="hidden sm:inline">Role (Dev):</span>
-                <span className="font-semibold capitalize text-[var(--primary)]">
-                  {user?.role.replace('_', ' ') || 'Guest'}
-                </span>
-                <ChevronDown className="h-3 w-3 text-[var(--muted-foreground)]" />
+                Sign out
               </button>
-
-              {roleDropdownOpen && (
-                <div
-                  className="absolute right-0 mt-2 w-64 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] p-2 shadow-2xl z-50 text-xs animate-in fade-in zoom-in-95 duration-100"
-                  role="menu"
-                >
-                  <div className="px-2 py-1.5 border-b border-[var(--surface-border-subtle)] mb-1">
-                    <p className="font-semibold text-[var(--foreground)]">Dev Mode Role Switcher</p>
-                    <p className="text-[11px] text-[var(--muted-foreground)]">
-                      Simulate RBAC views (disabled in production)
-                    </p>
-                  </div>
-                  {roles.map((r) => (
-                    <button
-                      key={r.role}
-                      type="button"
-                      role="menuitem"
-                      onClick={() => {
-                        loginAs(r.role);
-                        setRoleDropdownOpen(false);
-                      }}
-                      className={`w-full flex flex-col items-start px-2.5 py-2 rounded-lg text-left transition-colors ${
-                        user?.role === r.role
-                          ? 'bg-[var(--primary-light)] text-[var(--primary)] font-semibold'
-                          : 'text-[var(--foreground)] hover:bg-[var(--surface-subtle)]'
-                      }`}
-                    >
-                      <span className="font-medium text-xs">{r.title}</span>
-                      <span className="text-[10px] text-[var(--muted-foreground)]">{r.desc}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            </>
           ) : (
-            <div className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--surface-border)] bg-[var(--surface-subtle)] px-2.5 py-1.5 text-xs font-medium text-[var(--foreground)]">
-              <Shield className="h-3.5 w-3.5 text-[var(--primary)]" />
-              <span className="font-semibold capitalize text-[var(--primary)]">
-                {user?.role.replace('_', ' ') || 'Authenticated'}
-              </span>
-            </div>
+            <Link
+              href="/sign-in"
+              className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface-subtle)] px-2.5 py-1.5 text-xs font-medium text-[var(--foreground)] hover:bg-[var(--surface-muted)] transition-colors"
+            >
+              Sign in
+            </Link>
           )}
 
           {/* Mobile menu trigger */}

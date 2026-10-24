@@ -16,11 +16,8 @@ import {
   FileCheck2,
   CheckCircle2,
 } from 'lucide-react';
-import { useAuth } from '@/lib/auth/auth-context';
 
 export default function HomePage() {
-  const { user, loginAs } = useAuth();
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -189,67 +186,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quick Role Tester Strip */}
-      <section className="py-8 border-t border-[var(--surface-border)] bg-[var(--surface-subtle)]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-              <h4 className="text-sm font-semibold text-[var(--foreground)]">
-                Evaluate Role-Based Access Control (RBAC)
-              </h4>
-              <p className="text-xs text-[var(--muted-foreground)]">
-                Currently logged in as: <strong className="text-[var(--primary)] capitalize">{user?.role.replace('_', ' ')}</strong> ({user?.fullName})
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => loginAs('super_admin')}
-                className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                  user?.role === 'super_admin'
-                    ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
-                    : 'bg-[var(--surface)] border border-[var(--surface-border)] text-[var(--foreground)] hover:bg-[var(--surface-muted)]'
-                }`}
-              >
-                Super Admin
-              </button>
-              <button
-                type="button"
-                onClick={() => loginAs('hiring_manager')}
-                className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                  user?.role === 'hiring_manager'
-                    ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
-                    : 'bg-[var(--surface)] border border-[var(--surface-border)] text-[var(--foreground)] hover:bg-[var(--surface-muted)]'
-                }`}
-              >
-                Hiring Manager
-              </button>
-              <button
-                type="button"
-                onClick={() => loginAs('interviewer')}
-                className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                  user?.role === 'interviewer'
-                    ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
-                    : 'bg-[var(--surface)] border border-[var(--surface-border)] text-[var(--foreground)] hover:bg-[var(--surface-muted)]'
-                }`}
-              >
-                Interviewer
-              </button>
-              <button
-                type="button"
-                onClick={() => loginAs('candidate')}
-                className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                  user?.role === 'candidate'
-                    ? 'bg-[var(--primary)] text-[var(--primary-foreground)]'
-                    : 'bg-[var(--surface)] border border-[var(--surface-border)] text-[var(--foreground)] hover:bg-[var(--surface-muted)]'
-                }`}
-              >
-                Candidate
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

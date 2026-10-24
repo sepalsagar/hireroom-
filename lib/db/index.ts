@@ -8,7 +8,6 @@ export const isDatabaseConfigured = Boolean(
 );
 
 export interface MockStore {
-  users: Array<typeof schema.users.$inferSelect>;
   organizations: Array<typeof schema.organizations.$inferSelect>;
   jobs: Array<typeof schema.jobs.$inferSelect>;
   candidates: Array<typeof schema.candidates.$inferSelect>;
@@ -25,35 +24,6 @@ export const initialMockStore: MockStore = {
       name: 'HireRoom Engineering Demo',
       slug: 'hireroom-demo',
       planTier: 'free_academic',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-  ],
-  users: [
-    {
-      id: 'usr_super_admin_01',
-      email: 'sepalsagar1234@gmail.com',
-      fullName: 'Sepal Sagar',
-      role: 'super_admin',
-      avatarUrl: null,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      id: 'usr_hiring_manager_01',
-      email: 'marcus.vance@techcorp.internal',
-      fullName: 'Marcus Vance',
-      role: 'hiring_manager',
-      avatarUrl: null,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      id: 'usr_interviewer_01',
-      email: 'elena.rostova@techcorp.internal',
-      fullName: 'Elena Rostova',
-      role: 'interviewer',
-      avatarUrl: null,
       createdAt: new Date(),
       updatedAt: new Date(),
     },
@@ -134,21 +104,7 @@ export const initialMockStore: MockStore = {
       updatedAt: new Date(),
     },
   ],
-  interviews: [
-    {
-      id: 'room_demo_live',
-      jobId: 'job_02',
-      applicationId: 'app_01',
-      title: 'Live Technical Architecture & Live Coding',
-      scheduledAt: new Date(Date.now() + 3600000),
-      durationMinutes: 60,
-      status: 'scheduled',
-      hostUserId: 'usr_interviewer_01',
-      guestLinkToken: 'token_guest_demo_772',
-      guestLinkExpiresAt: new Date(Date.now() + 86400000),
-      createdAt: new Date(),
-    },
-  ],
+  interviews: [],
   rubrics: [
     {
       id: 'rubric_system_design_01',

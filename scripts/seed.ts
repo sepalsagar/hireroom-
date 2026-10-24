@@ -24,57 +24,7 @@ async function seed() {
       planTier: 'free_academic',
     }).onConflictDoNothing();
 
-    console.log('2. Seeding Users (Sepal Sagar super_admin, managers, interviewers)...');
-    await db.insert(schema.users).values([
-      {
-        id: 'usr_super_admin_01',
-        email: 'sepalsagar1234@gmail.com',
-        fullName: 'Sepal Sagar',
-        role: 'super_admin',
-      },
-      {
-        id: 'usr_hiring_manager_01',
-        email: 'marcus.vance@techcorp.internal',
-        fullName: 'Marcus Vance',
-        role: 'hiring_manager',
-      },
-      {
-        id: 'usr_interviewer_01',
-        email: 'elena.rostova@techcorp.internal',
-        fullName: 'Elena Rostova',
-        role: 'interviewer',
-      },
-      {
-        id: 'usr_candidate_01',
-        email: 'alex.chen.candidate@gmail.com',
-        fullName: 'Alex Chen',
-        role: 'candidate',
-      },
-    ]).onConflictDoNothing();
-
-    console.log('3. Seeding Memberships...');
-    await db.insert(schema.memberships).values([
-      {
-        id: 'mem_01',
-        userId: 'usr_super_admin_01',
-        organizationId: 'org_hireroom_demo',
-        role: 'super_admin',
-      },
-      {
-        id: 'mem_02',
-        userId: 'usr_hiring_manager_01',
-        organizationId: 'org_hireroom_demo',
-        role: 'hiring_manager',
-      },
-      {
-        id: 'mem_03',
-        userId: 'usr_interviewer_01',
-        organizationId: 'org_hireroom_demo',
-        role: 'interviewer',
-      },
-    ]).onConflictDoNothing();
-
-    console.log('4. Seeding Entitlements...');
+    console.log('2. Seeding Entitlements...');
     await db.insert(schema.entitlements).values({
       id: 'ent_demo_01',
       organizationId: 'org_hireroom_demo',
@@ -84,7 +34,7 @@ async function seed() {
       canUseWhiteboard: true,
     }).onConflictDoNothing();
 
-    console.log('5. Seeding Standard Technical Jobs...');
+    console.log('3. Seeding Standard Technical Jobs...');
     await db.insert(schema.jobs).values([
       {
         id: 'job_01',

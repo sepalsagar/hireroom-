@@ -42,10 +42,7 @@ export async function handleMiddlewareRequest(
 ): Promise<NextResponse> {
   const pathname = req.nextUrl.pathname;
 
-  // 1. Explicitly public routes always pass through
-  if (isPublicRoute(req)) {
-    return NextResponse.next();
-  }
+  const isPublic = isPublicRoute(req);
 
   // 2. Demo mode check: ONLY active in non-production AND when explicitly set to 'true'.
   // STRICTLY IGNORED in production builds (NODE_ENV === 'production').
@@ -71,6 +68,9 @@ export async function handleMiddlewareRequest(
   );
 
   if (!hasValidPublishableKey || !hasValidSecretKey) {
+    if (isPublic) {
+      return NextResponse.next();
+    }
     if (pathname.startsWith('/api/')) {
       return NextResponse.json(
         {
@@ -95,6 +95,12 @@ export async function handleMiddlewareRequest(
   // Anonymous API requests receive 401 Unauthorized; web pages redirect to sign-in.
   const clerkHandler = clerkMiddleware(
     async (auth, request) => {
+      // Public pages still pass through Clerk middleware so its request context
+      // is available to Clerk components such as <SignIn /> and <SignUp />.
+      if (isPublicRoute(request)) {
+        return NextResponse.next();
+      }
+
       const session = await auth();
       if (!session.userId) {
         if (request.nextUrl.pathname.startsWith('/api/')) {
@@ -119,6 +125,9 @@ export async function handleMiddlewareRequest(
   try {
     return (await clerkHandler(req, ev)) as NextResponse;
   } catch {
+    if (isPublic) {
+      return NextResponse.next();
+    }
     if (pathname.startsWith('/api/')) {
       return NextResponse.json(
         {

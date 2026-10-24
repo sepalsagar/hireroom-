@@ -4,22 +4,19 @@ export interface UserProfile {
   id: string;
   email: string;
   fullName: string;
-  role: UserRole;
+  role: UserRole | null;
   avatarUrl?: string;
-  organizationId: string;
-  organizationName: string;
-  isDemoUser?: boolean;
+  organizationId: string | null;
+  organizationName: string | null;
 }
 
 export interface AuthSession {
   user: UserProfile | null;
   isAuthenticated: boolean;
   isLoading: boolean;
-  provider: 'clerk' | 'mock-dev';
+  provider: 'clerk';
 }
 
 export interface AuthContextType extends AuthSession {
-  loginAs: (role: UserRole) => void;
-  logout: () => void;
-  switchOrganization: (orgId: string, orgName: string) => void;
+  logout: () => Promise<void>;
 }
