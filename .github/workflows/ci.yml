@@ -1,0 +1,40 @@
+name: HireRoom CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    name: Typecheck, Lint, Test & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: TypeScript Typecheck
+        run: npx tsc --noEmit
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Vitest Behavior Test Suite
+        run: npm run test
+
+      - name: Production Next.js Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "pk_test_ci_dummy_key"
+          DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/postgres"
+          DODO_PAYMENTS_TEST_MODE: "true"
